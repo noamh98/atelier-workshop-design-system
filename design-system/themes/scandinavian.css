@@ -1,0 +1,37 @@
+/* ============================================================
+   THEME · SCANDINAVIAN EXECUTIVE
+   Quiet, airy, high-whitespace minimalism. Ink is nearly mono.
+   Activated by [data-theme="scandi"].
+   ============================================================ */
+[data-theme="scandi"]{
+  --color-bg:            #fbfbfa;
+  --color-surface:       #ffffff;
+  --color-surface-sunken:#f3f3f1;
+  --color-line:          #ececea;
+  --color-line-strong:   #d9d9d5;
+
+  --color-text:      #1c1c1a;
+  --color-text-soft: #6b6b66;
+  --color-text-muted:#9a9a94;
+
+  --ink-black:#111110;
+  --ink-blue:#3d5a80; --ink-red:#a4443f; --ink-green:#3a6b57;
+  --ink-orange:#b07a3c; --ink-purple:#5c5470;
+
+  --radius-card:var(--r-md);
+  --radius-surface:var(--r-md);
+  --shadow-color:30 10% 40%;
+  --shadow-paper:none;
+  --font-sans:"Inter","Assistant",ui-sans-serif,system-ui,sans-serif;
+}
+
+[data-theme="scandi"] body{ background:var(--color-bg); }
+[data-theme="scandi"] .card,
+[data-theme="scandi"] .surface,
+[data-theme="scandi"] .slide{
+  background:var(--color-surface);
+  border:1px solid var(--color-line);
+  box-shadow:var(--elev-1);
+}
+[data-theme="scandi"] .section{ padding-block:var(--s-24); } /* extra breathing room */
+[data-theme="scandi"]{ --annotations:0; }

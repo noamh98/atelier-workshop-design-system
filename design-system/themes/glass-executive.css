@@ -1,0 +1,44 @@
+/* ============================================================
+   THEME · GLASS EXECUTIVE
+   Frosted glass panels over a deep gradient. Boardroom-at-night.
+   Activated by [data-theme="glass"].
+   ============================================================ */
+[data-theme="glass"]{
+  --color-bg:            #0b1020;
+  --color-surface:       rgba(255,255,255,.06);
+  --color-surface-sunken:rgba(255,255,255,.03);
+  --color-line:          rgba(255,255,255,.14);
+  --color-line-strong:   rgba(255,255,255,.24);
+
+  --color-text:      #eaf0ff;
+  --color-text-soft: #b3c0dd;
+  --color-text-muted:#7f8db3;
+
+  --ink-black:#ffffff;
+  --ink-blue:#6aa8ff; --ink-red:#ff8098; --ink-green:#4fe0a6;
+  --ink-orange:#ffb45c; --ink-purple:#b79bff;
+
+  --radius-card:var(--r-lg);
+  --radius-surface:var(--r-xl);
+  --shadow-color:230 80% 3%;
+  --shadow-paper:none;
+}
+
+[data-theme="glass"] body{
+  background:
+    radial-gradient(1200px 600px at 15% -10%, #1a2a5e 0, transparent 60%),
+    radial-gradient(1000px 700px at 100% 0%, #123047 0, transparent 55%),
+    linear-gradient(160deg,#0b1020,#0a0d1a);
+  color:var(--color-text);
+}
+
+[data-theme="glass"] .card,
+[data-theme="glass"] .surface,
+[data-theme="glass"] .slide{
+  background:var(--color-surface);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid var(--color-line);
+  box-shadow:0 8px 40px -12px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.12);
+}
+[data-theme="glass"]{ --annotations:0; }

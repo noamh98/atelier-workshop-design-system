@@ -1,0 +1,43 @@
+/* ============================================================
+   THEME · HAND-DRAWN STRATEGY WORKSHOP  (flagship)
+   The consultant's notebook: warm paper, ink system, physical
+   annotations. Activated by [data-theme="workshop"] (also default).
+   Only this file changes — the component library is untouched.
+   ============================================================ */
+[data-theme="workshop"], :root{
+  --color-bg:            #f7f4ec;
+  --color-surface:       #fffdf7;
+  --color-surface-sunken:#f0ece0;
+  --color-line:          #e6dfca;
+  --color-line-strong:   #cdc3a4;
+
+  --radius-card:   var(--radius-organic);
+  --radius-surface:22px 18px 24px 16px;
+
+  --font-sans:"Inter","Assistant",ui-sans-serif,system-ui,sans-serif;
+  --shadow-paper: 0 1px 0 rgba(0,0,0,.02), 7px 12px 26px -14px hsl(220 40% 20% / .30);
+}
+
+[data-theme="workshop"] body{
+  background-color:var(--color-bg);
+  background-image:var(--paper-grain);
+  background-size:var(--paper-grain-size);
+}
+
+/* Surfaces read as trimmed sheets of paper */
+[data-theme="workshop"] .surface,
+[data-theme="workshop"] .card,
+[data-theme="workshop"] .slide{
+  background-color:var(--color-surface);
+  background-image:var(--paper-grain);
+  background-size:var(--paper-grain-size);
+  box-shadow:var(--shadow-paper), var(--elev-2);
+}
+
+/* Headline underlines & marker strokes feel inked */
+[data-theme="workshop"] .slide-title,
+[data-theme="workshop"] h1,
+[data-theme="workshop"] h2{ letter-spacing:var(--tracking-tight); }
+
+/* Enable physical annotation affordances for this theme */
+[data-theme="workshop"]{ --annotations:1; }

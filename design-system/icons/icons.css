@@ -1,0 +1,19 @@
+/* ============================================================
+   ICONS · sizing & alignment
+   Icons inherit color via currentColor and scale with font-size.
+   ============================================================ */
+.icon{ inline-size:1.25em; block-size:1.25em; display:inline-block; vertical-align:-.18em;
+  color:currentColor; flex-shrink:0; }
+.icon--sm{ inline-size:1em; block-size:1em; }
+.icon--lg{ inline-size:1.6em; block-size:1.6em; }
+.icon--xl{ inline-size:2.4em; block-size:2.4em; }
+
+/* Icon tile — a bordered square that frames an icon in cards/callouts */
+.icon-tile{ display:grid; place-items:center; inline-size:2.6rem; block-size:2.6rem;
+  border:var(--border-base); border-radius:var(--radius-control);
+  background:var(--color-surface-sunken); color:var(--color-accent); flex-shrink:0; }
+.icon-tile.blue{ color:var(--ink-blue); }
+.icon-tile.red{ color:var(--ink-red); }
+.icon-tile.green{ color:var(--ink-green); }
+.icon-tile.orange{ color:var(--ink-orange); }
+.icon-tile.purple{ color:var(--ink-purple); }

@@ -1,0 +1,44 @@
+/* ============================================================
+   THEME · MICROSOFT AI PREMIUM
+   Fluent-inspired: crisp neutrals, signal blue, soft depth,
+   subtle AI gradient accents. Activated by [data-theme="ai"].
+   ============================================================ */
+[data-theme="ai"]{
+  --color-bg:            #f5f6fa;
+  --color-surface:       #ffffff;
+  --color-surface-sunken:#eef0f6;
+  --color-line:          #e3e6ef;
+  --color-line-strong:   #cdd2e0;
+
+  --color-text:      #1b1f2a;
+  --color-text-soft: #5b6172;
+  --color-text-muted:#8a90a2;
+
+  --ink-black:#141824;
+  --ink-blue:#0f6cbd;  --ink-red:#d13438; --ink-green:#0f8a4f;
+  --ink-orange:#c47a10;--ink-purple:#8661c5;
+
+  --color-accent:#0f6cbd;
+  --color-focus:#0f6cbd;
+  --radius-card:12px;
+  --radius-surface:16px;
+  --shadow-color:222 47% 30%;
+  --shadow-paper:none;
+}
+
+[data-theme="ai"] body{ background:var(--color-bg); }
+[data-theme="ai"] .card,
+[data-theme="ai"] .surface,
+[data-theme="ai"] .slide{
+  background:var(--color-surface);
+  border:1px solid var(--color-line);
+  box-shadow:var(--elev-2);
+}
+
+/* Signature AI accent — used sparingly on .badge.ai and rails */
+[data-theme="ai"] .badge.ai,
+[data-theme="ai"] .ai-accent{
+  background:linear-gradient(120deg,#8661c5,#0f6cbd);
+  color:#fff; border:none;
+}
+[data-theme="ai"]{ --annotations:0; }
