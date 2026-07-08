@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="workshop" data-scheme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier · Executive Deck</title>
+<meta name="description" content="Presentation / deck mode example built on the Atelier framework. Arrow keys to navigate, F for fullscreen, P to print.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&family=Assistant:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../atelier.css">
+</head>
+<body class="is-deck">
+<a class="skip-link" href="#deck">Skip to deck</a>
+
+<header class="toolbar no-print">
+  <span class="brand"><span class="dot"></span> Atelier <span class="text-soft fw-medium">· Deck</span></span>
+  <span class="spacer"></span>
+  <a class="btn ghost" href="gallery.html">Components</a>
+  <button class="btn ghost" data-action="set-theme" data-theme="glass">Glass</button>
+  <button class="btn ghost" data-action="set-theme" data-theme="ai">MS&nbsp;AI</button>
+  <button class="btn ghost" data-action="theme">◐ Dark</button>
+  <button class="btn" data-action="print">Export PDF</button>
+</header>
+
+<main id="deck" class="deck" data-deck>
+
+  <section class="slide" aria-label="Title">
+    <div class="slide__body hero">
+      <span class="eyebrow">Strategy Workshop · 2025</span>
+      <h1>An Intelligent <span class="marker-circle ink-blue">Operating Model<svg class="draw" viewBox="0 0 300 60" preserveAspectRatio="none"><path d="M12,34 C60,8 262,6 288,30 C296,44 240,56 148,55 C60,54 6,46 16,30"/></svg></span></h1>
+      <p class="hero__lead">From manual casework to AI-assisted resolution — a 4-quarter path to measurable value.</p>
+      <div class="cluster hero__meta"><span class="chip">Executive Steering Committee</span><span class="chip">Confidential</span></div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Executive summary">
+    <div class="slide__body">
+      <span class="tag">Executive Summary</span>
+      <h2 class="slide-title">The story in one slide</h2>
+      <div class="exec-summary mt-6">
+        <article class="card fold-corner"><ul class="points">
+          <li>Legacy processes cost <strong>~$18M/yr</strong> in repeated manual work.</li>
+          <li>An AI-assisted model can automate <span class="mark">62% of cases</span> in 9 months.</li>
+          <li>Phase-1 pilot targets one high-volume process — measurable in 90 days.</li>
+        </ul></article>
+        <div class="stack">
+          <div class="kpi purple"><span class="kpi__label">Automation potential</span><div class="kpi__value" data-count="62" data-suffix="%">0%</div></div>
+          <div class="kpi green"><span class="kpi__label">Annual saving</span><div class="kpi__value" data-count="11.4" data-decimals="1" data-prefix="$" data-suffix="M">$0M</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Current vs future">
+    <div class="slide__body">
+      <span class="tag">Current → Future</span>
+      <h2 class="slide-title">Where we are, where we are going</h2>
+      <div class="vs mt-6">
+        <div class="vs__col now"><h4 class="ink-red">Today</h4><ul><li>Manual triage in a shared inbox</li><li>4–6 day cycle time</li><li>No single source of truth</li></ul></div>
+        <div class="vs__arrow"><svg class="freehand icon--arrow" viewBox="0 0 56 40"><path d="M4,20 C22,10 34,30 48,20 M40,12 L50,20 L40,28"/></svg></div>
+        <div class="vs__col future"><h4 class="ink-green">Target</h4><ul><li>Intelligent routing, auto-prioritised</li><li>Same-day resolution</li><li>Unified case workspace</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Roadmap">
+    <div class="slide__body">
+      <span class="tag">Roadmap</span>
+      <h2 class="slide-title">Four quarters to scale</h2>
+      <div class="roadmap mt-6">
+        <div class="roadmap__lane"><span class="soft text-soft">Foundation</span><div class="roadmap__bar">Q1 · Data & security base</div></div>
+        <div class="roadmap__lane"><span class="soft text-soft">Pilot</span><div class="roadmap__bar p">Q2 · First process</div></div>
+        <div class="roadmap__lane"><span class="soft text-soft">Expand</span><div class="roadmap__bar g">Q3 · 3 divisions</div></div>
+        <div class="roadmap__lane"><span class="soft text-soft">Optimise</span><div class="roadmap__bar o">Q4 · Cost & evals</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Metrics">
+    <div class="slide__body">
+      <span class="tag">Metrics</span>
+      <h2 class="slide-title">What we will measure</h2>
+      <div class="grid grid-4 mt-6">
+        <div class="kpi"><span class="kpi__label">Time to decision</span><div class="kpi__value" data-count="4.2" data-decimals="1" data-suffix="d">0</div><span class="kpi__delta down">▼ 38% faster</span></div>
+        <div class="kpi green"><span class="kpi__label">Satisfaction</span><div class="kpi__value" data-count="94" data-suffix="%">0%</div></div>
+        <div class="kpi orange"><span class="kpi__label">Open risks</span><div class="kpi__value" data-count="7">0</div></div>
+        <div class="kpi purple"><span class="kpi__label">Models in prod</span><div class="kpi__value" data-count="12">0</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-label="Recommendation">
+    <div class="slide__body">
+      <span class="tag">Recommendation</span>
+      <h2 class="slide-title">What we ask the committee to approve</h2>
+      <div class="grid grid-3 mt-8">
+        <div class="reco"><span class="reco__rank">1</span><h4 class="ink-green">Launch claims-triage pilot</h4><p>High ROI, low integration risk. 90-day outcome.</p></div>
+        <div class="reco"><span class="reco__rank">2</span><h4 class="ink-green">Stand up AI governance</h4><p>Evals, human-in-the-loop, monitoring first.</p></div>
+        <div class="reco"><span class="reco__rank">3</span><h4 class="ink-green">Fix the data foundation</h4><p>Quality & lineage for two source systems.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="deck-progress no-print"><span></span></div>
+<nav class="deck-nav no-print" aria-label="Deck navigation">
+  <button data-deck="prev" aria-label="Previous slide">‹</button>
+  <span class="deck-nav__count">1 / 6</span>
+  <button data-deck="next" aria-label="Next slide">›</button>
+</nav>
+
+<script type="module">
+  import { initDeck } from '../js/index.js';
+  initDeck();
+</script>
+</body>
+</html>
