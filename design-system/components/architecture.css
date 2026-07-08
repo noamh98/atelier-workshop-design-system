@@ -1,0 +1,44 @@
+/* ============================================================
+   COMPONENT · ARCHITECTURE & WIREFRAME
+   Tiered architecture sketch + low-fidelity wireframe blocks.
+   ============================================================ */
+.arch{ display:flex; flex-direction:column; gap:var(--s-3); }
+.arch__tier{ padding:var(--s-4); border:1px dashed var(--color-line-strong);
+  border-radius:var(--radius-card); background:var(--color-surface);
+  display:flex; flex-wrap:wrap; align-items:center; gap:var(--s-2); }
+.arch__tier h5{ inline-size:100%; font-size:var(--fs-xs); text-transform:uppercase;
+  letter-spacing:.06em; color:var(--color-text-muted); margin-block-end:var(--s-1); }
+.arch__box{ padding:var(--s-2) var(--s-3); font-size:var(--fs-sm); font-weight:var(--fw-semibold);
+  background:var(--color-surface-sunken); border:1px solid var(--color-line-strong);
+  border-radius:var(--radius-control); }
+.arch__tier:nth-child(1){ border-color:var(--ink-blue); }
+.arch__tier:nth-child(2){ border-color:var(--ink-purple); }
+.arch__tier:nth-child(3){ border-color:var(--ink-green); }
+
+/* Wireframe — sketch placeholders for a "sketch dashboard" */
+.wire{ padding:var(--s-4); border:2px solid var(--color-line-strong); border-radius:var(--radius-card);
+  background:var(--color-surface); }
+.wire__bar{ block-size:12px; border-radius:var(--r-pill); background:var(--color-surface-sunken);
+  margin-block-end:var(--s-2); }
+.wire__bar.md{ inline-size:70%; } .wire__bar.sm{ inline-size:40%; }
+.wire__block{ display:grid; place-items:center; min-block-size:54px; border-radius:var(--radius-control);
+  border:2px dashed var(--color-line-strong); color:var(--color-text-muted); font-size:var(--fs-xs);
+  font-weight:var(--fw-semibold); text-transform:uppercase; letter-spacing:.06em; }
+
+/* AI brain — node cluster for the intelligence layer */
+.ai-brain{ padding:var(--s-6); border-radius:var(--radius-card); border:1px solid var(--ink-purple);
+  background:color-mix(in srgb,var(--ink-purple) 6%,var(--color-surface)); }
+.ai-brain .node{ display:inline-block; margin:var(--s-1); padding:var(--s-2) var(--s-3);
+  font-size:var(--fs-sm); font-weight:var(--fw-semibold); background:var(--color-surface);
+  border:1px solid var(--ink-purple); border-radius:var(--r-pill); color:var(--ink-purple); }
+
+/* Swimlane */
+.swimlane{ display:flex; flex-direction:column; gap:var(--s-2); }
+.swimlane__row{ display:grid; grid-template-columns:120px repeat(4,1fr); gap:var(--s-2);
+  align-items:center; }
+.swimlane .lane{ font-size:var(--fs-sm); font-weight:var(--fw-bold); color:var(--color-text-soft);
+  padding:var(--s-3); background:var(--color-surface-sunken); border-radius:var(--radius-control); }
+.swimlane .node{ padding:var(--s-3); text-align:center; font-size:var(--fs-sm); font-weight:var(--fw-semibold);
+  background:var(--color-surface); border:1px solid var(--color-line-strong);
+  border-radius:var(--radius-control); }
+@media (max-width:760px){ .swimlane__row{ grid-template-columns:1fr; } }

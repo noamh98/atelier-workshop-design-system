@@ -1,0 +1,43 @@
+/* ============================================================
+   COMPONENT · MATRICES  (Risk / Priority / Decision / SWOT)
+   2×2 grids with axis labels + a decision list.
+   ============================================================ */
+.matrix-wrap{ position:relative; padding-inline-start:var(--s-6); padding-block-end:var(--s-6); }
+.matrix{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:var(--s-3); }
+.matrix .cell{ padding:var(--s-4); border-radius:var(--radius-card); border:1px dashed var(--color-line-strong);
+  background:var(--color-surface); display:flex; flex-direction:column; gap:var(--s-2); min-block-size:120px; }
+.matrix .cell h5{ font-size:var(--fs-xs); text-transform:uppercase; letter-spacing:.05em;
+  color:var(--color-text-muted); }
+.matrix .cell.hi{ background:color-mix(in srgb,var(--ink-red) 8%,var(--color-surface)); border-color:var(--ink-red); }
+.matrix .cell.mid{ background:color-mix(in srgb,var(--ink-orange) 8%,var(--color-surface)); }
+.matrix .cell.lo{ background:color-mix(in srgb,var(--ink-green) 8%,var(--color-surface)); }
+.matrix .dot{ display:inline-flex; align-items:center; gap:var(--s-2); font-size:var(--fs-sm);
+  font-weight:var(--fw-semibold); }
+.lbl-x{ text-align:center; margin-block-start:var(--s-2); font-size:var(--fs-xs);
+  font-weight:var(--fw-bold); color:var(--color-text-muted); }
+.lbl-y{ position:absolute; inset-inline-start:0; inset-block-start:50%;
+  transform:translateY(-50%) rotate(180deg); writing-mode:vertical-rl;
+  font-size:var(--fs-xs); font-weight:var(--fw-bold); color:var(--color-text-muted); }
+
+/* SWOT quadrants */
+.swot{ display:grid; grid-template-columns:1fr 1fr; gap:var(--s-3); }
+.swot__q{ padding:var(--s-5); border-radius:var(--radius-card); border:1px solid var(--color-line);
+  background:var(--color-surface); box-shadow:var(--elev-1); }
+.swot__q ul{ margin-block-start:var(--s-2); display:flex; flex-direction:column; gap:var(--s-1); }
+.swot__q li{ font-size:var(--fs-sm); color:var(--color-text-soft); padding-inline-start:var(--s-4);
+  position:relative; }
+.swot__q li::before{ content:"\2022"; position:absolute; inset-inline-start:0; color:var(--color-text-muted); }
+.swot__q.s{ border-block-start:3px solid var(--ink-green); }
+.swot__q.w{ border-block-start:3px solid var(--ink-red); }
+.swot__q.o{ border-block-start:3px solid var(--ink-blue); }
+.swot__q.t{ border-block-start:3px solid var(--ink-orange); }
+
+/* Decision list */
+.decision{ display:flex; gap:var(--s-4); align-items:center; padding:var(--s-4);
+  background:var(--color-surface); border:1px solid var(--color-line);
+  border-radius:var(--radius-card); box-shadow:var(--elev-1); }
+.decision .num{ display:grid; place-items:center; inline-size:1.9rem; block-size:1.9rem; flex-shrink:0;
+  border-radius:50%; background:var(--color-surface-sunken); border:1px solid var(--color-line-strong);
+  font-weight:var(--fw-bold); }
+.decision strong{ display:block; }
+.decision .badge{ margin-inline-start:auto; }

@@ -1,0 +1,45 @@
+/* ============================================================
+   COMPONENT · HEADER, FOOTER, TOOLBAR, DECK NAVIGATION
+   App chrome + deck presentation controls.
+   ============================================================ */
+/* Sticky document toolbar */
+.toolbar{ position:sticky; inset-block-start:0; z-index:var(--z-nav); display:flex; align-items:center;
+  gap:var(--s-3); padding:var(--s-3) var(--container-pad);
+  background:color-mix(in srgb,var(--color-bg) 86%,transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-block-end:1px solid var(--color-line); }
+.toolbar .brand{ display:flex; align-items:center; gap:var(--s-2); font-weight:var(--fw-black);
+  letter-spacing:var(--tracking-tight); }
+.toolbar .brand .dot{ inline-size:14px; block-size:14px; border-radius:4px;
+  background:var(--color-accent); transform:rotate(12deg); }
+.toolbar .spacer{ margin-inline-start:auto; }
+
+/* Slide footer / running header */
+.slide-footer{ display:flex; align-items:center; justify-content:space-between; gap:var(--s-4);
+  flex-wrap:wrap; padding-block:var(--s-8) var(--s-12); font-size:var(--fs-sm);
+  color:var(--color-text-soft); border-block-start:1px solid var(--color-line); margin-block-start:var(--s-12); }
+.page-num{ font-family:var(--font-mono); font-size:var(--fs-xs); color:var(--color-text-muted); }
+
+/* Section divider with centered label */
+.section-divider{ display:flex; align-items:center; gap:var(--s-4); margin-block:var(--s-12); }
+.section-divider::before,.section-divider::after{ content:""; flex:1; block-size:1px;
+  background:var(--color-line); }
+.section-divider span{ font-size:var(--fs-xs); font-weight:var(--fw-bold); text-transform:uppercase;
+  letter-spacing:var(--tracking-caps); color:var(--color-text-muted); }
+
+/* ---------- Deck navigation (presentation mode) -------------- */
+.deck-nav{ position:fixed; inset-block-end:var(--s-6); inset-inline-start:50%; translate:-50% 0;
+  z-index:var(--z-nav); display:flex; align-items:center; gap:var(--s-2);
+  padding:var(--s-2) var(--s-3); background:var(--color-surface);
+  border:1px solid var(--color-line); border-radius:var(--r-pill); box-shadow:var(--elev-3); }
+.deck-nav button{ display:grid; place-items:center; inline-size:2rem; block-size:2rem;
+  border-radius:50%; color:var(--color-text); transition:background var(--dur-1) var(--ease-standard); }
+.deck-nav button:hover{ background:var(--color-surface-sunken); }
+.deck-nav .deck-nav__count{ font-family:var(--font-mono); font-size:var(--fs-xs);
+  color:var(--color-text-soft); min-inline-size:4ch; text-align:center; }
+
+/* Deck progress rail */
+.deck-progress{ position:fixed; inset-block-start:0; inset-inline:0; block-size:3px;
+  z-index:var(--z-nav); background:transparent; }
+.deck-progress > span{ display:block; block-size:100%; inline-size:0; background:var(--color-accent);
+  transition:inline-size var(--dur-2) var(--ease-standard); }
