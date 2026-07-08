@@ -1,0 +1,51 @@
+/* =====================================================================
+   04 · ANIMATIONS — subtle, premium, purposeful.
+   Reveal-on-scroll driven by [data-reveal]; JS toggles .is-in.
+   ===================================================================== */
+
+@keyframes drawStroke   { to { stroke-dashoffset: 0; } }
+@keyframes fadeUp       { from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none} }
+@keyframes fadeIn       { from{opacity:0} to{opacity:1} }
+@keyframes slideInStart { from{opacity:0; transform:translateX(var(--slide-from, -28px))} to{opacity:1; transform:none} }
+@keyframes stickyDrop   { 0%{opacity:0; transform:translateY(-24px) rotate(var(--rot,-2deg)) scale(.96)}
+                          60%{opacity:1; transform:translateY(4px) rotate(var(--rot,-2deg)) scale(1.01)}
+                          100%{opacity:1; transform:translateY(0) rotate(var(--rot,-2deg)) scale(1)} }
+@keyframes paperReveal  { from{opacity:0; clip-path: inset(0 0 100% 0)} to{opacity:1; clip-path: inset(0 0 0 0)} }
+@keyframes glowPulse    { 0%,100%{ box-shadow: 0 0 0 0 var(--ink-purple-wash)} 50%{ box-shadow: 0 0 22px 4px var(--ink-purple-wash)} }
+@keyframes floaty       { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes countPop     { 0%{transform:scale(.9)} 55%{transform:scale(1.06)} 100%{transform:scale(1)} }
+
+/* Reveal harness — hidden until in view */
+[data-reveal]{ opacity:0; will-change: opacity, transform; }
+[data-reveal].is-in{ opacity:1; }
+[data-reveal="fade"].is-in{ animation: fadeIn var(--t-slow) var(--ease-out) both; }
+[data-reveal="up"].is-in{ animation: fadeUp var(--t-slow) var(--ease-out) both; }
+[data-reveal="slide"].is-in{ animation: slideInStart var(--t-slow) var(--ease-out) both; }
+[data-reveal="paper"].is-in{ animation: paperReveal .8s var(--ease-out) both; }
+[data-reveal="sticky"].is-in{ animation: stickyDrop .7s var(--ease-spring) both; }
+
+/* Stagger children */
+[data-stagger].is-in > *{ animation: fadeUp .6s var(--ease-out) both; }
+[data-stagger].is-in > *:nth-child(1){ animation-delay:.05s }
+[data-stagger].is-in > *:nth-child(2){ animation-delay:.13s }
+[data-stagger].is-in > *:nth-child(3){ animation-delay:.21s }
+[data-stagger].is-in > *:nth-child(4){ animation-delay:.29s }
+[data-stagger].is-in > *:nth-child(5){ animation-delay:.37s }
+[data-stagger].is-in > *:nth-child(6){ animation-delay:.45s }
+[data-stagger].is-in > *:nth-child(7){ animation-delay:.53s }
+[data-stagger].is-in > *:nth-child(8){ animation-delay:.61s }
+
+/* Hover micro-interactions */
+.hover-lift{ transition: transform var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease-out); }
+.hover-lift:hover{ transform: translateY(-4px); box-shadow: var(--sh-3); }
+.hover-tilt{ transition: transform var(--t-med) var(--ease-spring); }
+.hover-tilt:hover{ transform: rotate(-1deg) scale(1.015); }
+.glow{ animation: glowPulse 3.2s ease-in-out infinite; }
+.floaty{ animation: floaty 5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration:.001ms!important; animation-iteration-count:1!important;
+    transition-duration:.001ms!important; scroll-behavior:auto!important; }
+  [data-reveal]{ opacity:1!important; }
+  .freehand path,.marker-circle path{ stroke-dashoffset:0!important; }
+}

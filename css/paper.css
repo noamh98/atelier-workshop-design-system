@@ -1,0 +1,120 @@
+/* =====================================================================
+   03 · PAPER — notebook, whiteboard, dot-grid, blueprint surfaces
+   + physical annotations: tape, pins, clips, folded corners,
+     marker circles, freehand arrows, coffee stains, crossed text.
+   Everything is CSS/SVG — no raster assets.
+   ===================================================================== */
+
+/* ---- Surface variants ---- */
+.surf-notebook{
+  background-color: var(--paper);
+  background-image: repeating-linear-gradient(var(--paper) 0 27px, var(--paper-line) 27px 28px);
+}
+.surf-notebook.ruled-margin{ position:relative; }
+.surf-notebook.ruled-margin::before{
+  content:""; position:absolute; inset-block:0; inset-inline-start:52px; width:2px;
+  background: var(--ink-red-wash); }
+
+.surf-dotgrid{
+  background-color: var(--paper);
+  background-image: radial-gradient(var(--paper-line) 1.3px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+.surf-blueprint{
+  background-color:#12315a; color:#dbe8ff;
+  background-image:
+    linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 88px 88px, 88px 88px, 22px 22px, 22px 22px;
+}
+.surf-blueprint h1,.surf-blueprint h2,.surf-blueprint h3{ color:#eaf1ff; }
+.surf-whiteboard{ background:#fbfbfa; }
+
+/* ---- Coffee stain (very subtle) ---- */
+.coffee-stain{
+  position:absolute; width:120px; height:120px; pointer-events:none; opacity:.5;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 54%, rgba(120,72,30,.10) 55%, rgba(120,72,30,.16) 60%, transparent 63%),
+    radial-gradient(circle at 50% 50%, transparent 60%, rgba(120,72,30,.08) 62%, transparent 66%);
+  filter: blur(.3px);
+}
+
+/* ---- Masking tape ---- */
+.tape{
+  position:absolute; width:96px; height:26px; background:var(--tape);
+  box-shadow: var(--sh-1); opacity:.9; z-index:3;
+  border-inline: 1px dashed rgba(0,0,0,.06);
+}
+.tape::before,.tape::after{ content:""; position:absolute; inset-block:0; width:4px; }
+.tape.tl{ inset-block-start:-12px; inset-inline-start:18px; transform:rotate(-6deg); }
+.tape.tr{ inset-block-start:-12px; inset-inline-end:18px; transform:rotate(5deg); }
+.tape.tc{ inset-block-start:-13px; inset-inline-start:50%; transform:translateX(-50%) rotate(-2deg); }
+
+/* ---- Push pin ---- */
+.pin{
+  position:absolute; width:18px; height:18px; border-radius:50%; z-index:4;
+  background: radial-gradient(circle at 35% 30%, #ff8a8a, var(--ink-red) 60%, #9c2f37);
+  box-shadow: 0 3px 5px rgba(0,0,0,.35); inset-block-start:-9px; inset-inline-start:50%;
+  transform: translateX(-50%);
+}
+.pin::after{ content:""; position:absolute; inset:5px; border-radius:50%;
+  background: radial-gradient(circle at 40% 35%, rgba(255,255,255,.9), transparent 60%); }
+.pin.blue{ background: radial-gradient(circle at 35% 30%, #8ab6ff, var(--ink-blue) 60%, #1a4aa0); }
+.pin.green{ background: radial-gradient(circle at 35% 30%, #8ce0a5, var(--ink-green) 60%, #1c6b3c); }
+
+/* ---- Paper clip ---- */
+.clip{
+  position:absolute; inset-block-start:-14px; inset-inline-end:26px; width:22px; height:52px; z-index:4;
+  border:2.5px solid #9aa2ad; border-radius:11px; border-block-end:none; height:44px;
+  box-shadow: var(--sh-1);
+}
+.clip::before{ content:""; position:absolute; inset:6px 5px 12px 5px; border:2.5px solid #b9c0c9;
+  border-radius:8px; border-block-end:none; }
+
+/* ---- Folded corner ---- */
+.fold-corner{ position:relative; }
+.fold-corner::after{
+  content:""; position:absolute; inset-block-end:0; inset-inline-end:0;
+  border-width: 0 0 28px 28px; border-style:solid;
+  border-color: transparent transparent var(--paper-2) transparent;
+  filter: drop-shadow(-2px -2px 2px rgba(0,0,0,.12));
+}
+
+/* ---- Marker circle (SVG stroke that "draws" on reveal) ---- */
+.marker-circle{ position:relative; display:inline-block; }
+.marker-circle > svg{ position:absolute; inset:-14px -18px; width:calc(100% + 36px); height:calc(100% + 28px); overflow:visible; pointer-events:none; }
+.marker-circle path{ fill:none; stroke:var(--ink-red); stroke-width:3.2; stroke-linecap:round;
+  stroke-dasharray: 900; stroke-dashoffset: 900; opacity:.85; }
+.is-drawn .marker-circle path,
+.marker-circle.draw path{ animation: drawStroke 1.1s var(--ease-out) forwards; }
+
+/* ---- Highlighter marker ---- */
+.mark{ background: linear-gradient(120deg, var(--hl-yellow), var(--hl-yellow));
+  background-size: 100% .68em; background-repeat:no-repeat; background-position: 0 68%;
+  padding: 0 .1em; border-radius: 2px; box-decoration-break: clone; }
+.mark.g{ background-image: linear-gradient(120deg,var(--hl-green),var(--hl-green)); }
+.mark.b{ background-image: linear-gradient(120deg,var(--hl-blue),var(--hl-blue)); }
+.mark.p{ background-image: linear-gradient(120deg,var(--hl-pink),var(--hl-pink)); }
+
+/* ---- Crossed / struck text ---- */
+.strike{ position:relative; color:var(--text-mute); }
+.strike::after{ content:""; position:absolute; inset-inline:-3px; inset-block-start:52%;
+  height:2px; background:var(--ink-red); transform: rotate(-2.4deg); border-radius:2px; }
+
+/* ---- Freehand arrow (reusable SVG wrapper) ---- */
+.freehand{ overflow:visible; }
+.freehand path{ fill:none; stroke:var(--ink-black); stroke-width:2.6; stroke-linecap:round;
+  stroke-linejoin:round; stroke-dasharray: 1000; stroke-dashoffset:1000; }
+.is-drawn .freehand path,
+.freehand.draw path{ animation: drawStroke 1s var(--ease-out) forwards; }
+.freehand.blue path{ stroke:var(--ink-blue); }
+.freehand.green path{ stroke:var(--ink-green); }
+
+/* ---- Handwritten annotation label ---- */
+.annot{ font-family:var(--font-hand); font-size:1.35rem; font-weight:700; color:var(--ink-blue);
+  line-height:1.1; transform: rotate(-3deg); display:inline-block; }
+.annot.red{ color:var(--ink-red); } .annot.green{ color:var(--ink-green); }
+.annot.orange{ color:var(--ink-orange); } .annot.purple{ color:var(--ink-purple); }
