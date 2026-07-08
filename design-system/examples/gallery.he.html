@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="workshop" data-scheme="light" data-lock-dir>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>אַטֶלְיֶה · גלריית רכיבים</title>
+<meta name="description" content="גלריית רכיבים חיה לפריימוורק המצגות אַטֶלְיֶה. תמת סדנת אסטרטגיה בכתב יד. HTML · CSS · Vanilla JS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../atelier.css">
+<style>body{ font-family:"Assistant",var(--font-sans); }</style>
+</head>
+<body>
+<a class="skip-link" href="#main">דילוג לתוכן</a>
+
+<header class="toolbar no-print">
+  <span class="brand"><span class="dot"></span> אַטֶלְיֶה <span class="text-soft fw-medium">· גלריה</span></span>
+  <span class="spacer"></span>
+  <nav class="cluster no-print" aria-label="בורר תמות">
+    <button class="btn ghost" data-action="set-theme" data-theme="workshop">סדנה</button>
+    <button class="btn ghost" data-action="set-theme" data-theme="glass">זכוכית</button>
+    <button class="btn ghost" data-action="set-theme" data-theme="scandi">סקנדי</button>
+    <button class="btn ghost" data-action="set-theme" data-theme="ai">MS&nbsp;AI</button>
+  </nav>
+  <a class="btn ghost" href="gallery.html" title="English">EN</a>
+  <button class="btn ghost" data-action="dir" title="החלפת כיוון">◧ <span data-dir-label>RTL</span></button>
+  <button class="btn ghost" data-action="theme" title="בהיר/כהה">◐ <span data-scheme-label>בהיר</span></button>
+  <button class="btn" data-action="print">ייצוא</button>
+</header>
+
+<main id="main">
+
+<section class="hero container" data-reveal="up">
+  <div class="coffee-stain" style="top:40px; inset-inline-end:60px;"></div>
+  <span class="eyebrow hero__kicker">פריימוורק מצגות מחלקתי</span>
+  <h1>סדנת האסטרטגיה, <span class="marker-circle ink-blue">משורטטת<svg class="draw" viewBox="0 0 240 60" preserveAspectRatio="none"><path d="M12,34 C40,8 210,6 228,30 C236,44 190,56 118,55 C44,54 6,46 14,30"/></svg></span> כמערכת.</h1>
+  <p class="hero__lead">שכבת טוקנים אחת. ארבע תמות. שלושים רכיבים. פריימוורק ללא תלויות, בר-הרכבה ע\"י בינה מלאכותית, למצגות הנהלה — נבנה עם <strong>HTML · CSS · Vanilla JS</strong>.</p>
+  <div class="cluster hero__meta">
+    <span class="chip">RTL / LTR</span><span class="chip">כהה / בהיר</span>
+    <span class="chip">4 תמות</span><span class="chip">מוכן להדפסה</span><span class="chip">אפס תלויות</span>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <div><span class="tag">01 · יסודות</span>
+      <h2 class="slide-title">מערכת הדיו<svg class="underline draw" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2,8 C60,2 140,2 198,7"/></svg></h2></div>
+    <p class="text-soft" style="max-inline-size:36ch">שישה צבעי דיו סמנטיים נושאים משמעות בכל רכיב.</p>
+  </div>
+  <div class="grid grid-3" data-reveal="up" data-stagger>
+    <article class="card"><h4 class="ink-black">שחור — כותרות</h4><p class="text-soft">מבנה, כותרות, שלד הטיעון.</p></article>
+    <article class="card"><h4 class="ink-blue">כחול — רעיונות</h4><p class="text-soft">השערות, מושגים, חשיבה מקשרת.</p></article>
+    <article class="card"><h4 class="ink-red">אדום — בעיות</h4><p class="text-soft">נקודות כאב, חסמים, מה שבור היום.</p></article>
+    <article class="card"><h4 class="ink-green">ירוק — פתרונות</h4><p class="text-soft">המלצות, הישגים, העתיד הרצוי.</p></article>
+    <article class="card"><h4 class="ink-orange">כתום — סיכונים</h4><p class="text-soft">אי-ודאות, חשיפה, דברים לעקוב.</p></article>
+    <article class="card"><h4 class="ink-purple">סגול — בינה מלאכותית</h4><p class="text-soft">אינטליגנציה, אוטומציה, יכולת מונעת-מודל.</p></article>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">02 · תמצית</span>
+  <h2 class="slide-title">תקציר מנהלים<svg class="underline draw" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2,8 C60,2 140,2 198,7"/></svg></h2>
+  <div class="exec-summary mt-6" data-reveal="up">
+    <article class="card fold-corner">
+      <span class="eyebrow card__eyebrow">הסיפור בשקף אחד</span>
+      <ul class="points">
+        <li>תהליכים מיושנים עולים <strong>~₪18M</strong> בשנה בעבודה ידנית חוזרת בשלוש חטיבות.</li>
+        <li>מודל תפעולי נתמך-בינה יכול לאטמט <span class="mark">62% מהתיקים</span> בתוך 9 חודשים.</li>
+        <li>פילוט שלב-1 ממקד תהליך יחיד בנפח גבוה — מדיד תוך 90 יום.</li>
+        <li>ממשל, אבטחה וניהול שינוי רצים במקביל מהיום הראשון.</li>
+      </ul>
+    </article>
+    <div class="stack">
+      <div class="kpi purple"><span class="kpi__label">פוטנציאל אוטומציה</span>
+        <div class="kpi__value" data-count="62" data-suffix="%">0%</div>
+        <span class="kpi__delta up"><svg class="icon icon--sm"><use href="../icons/icons.svg#i-sparkle"/></svg> מול 18% היום</span></div>
+      <div class="kpi green"><span class="kpi__label">חיסון שנתי צפוי</span>
+        <div class="kpi__value" data-count="11.4" data-decimals="1" data-prefix="₪" data-suffix="M">₪0M</div>
+        <span class="kpi__delta up">▲ החזר פי 3.2</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">03 · מדדים</span>
+  <h2 class="slide-title">כרטיסי KPI והתקדמות</h2>
+  <div class="grid grid-4 mt-6" data-reveal="up" data-stagger>
+    <div class="kpi"><span class="kpi__label">זמן להחלטה</span><div class="kpi__value" data-count="4.2" data-decimals="1" data-suffix=" ימים">0</div><span class="kpi__delta down">▼ מהיר ב-38%</span></div>
+    <div class="kpi green"><span class="kpi__label">שביעות רצון</span><div class="kpi__value" data-count="94" data-suffix="%">0%</div><span class="kpi__delta up">▲ 6 נק'</span></div>
+    <div class="kpi orange"><span class="kpi__label">סיכונים פתוחים</span><div class="kpi__value" data-count="7">0</div><span class="kpi__delta">2 קריטיים</span></div>
+    <div class="kpi purple"><span class="kpi__label">מודלים בייצור</span><div class="kpi__value" data-count="12">0</div><span class="kpi__delta up">▲ 4 ברבעון</span></div>
+  </div>
+  <div class="grid grid-2 mt-8">
+    <div class="card"><div class="cluster between"><strong>התקדמות מיגרציה</strong><span class="mono">72%</span></div><div class="progress mt-2" data-progress="72"><span></span></div></div>
+    <div class="card"><div class="cluster between"><strong>כיסוי מודלים</strong><span class="mono">45%</span></div><div class="progress p mt-2" data-progress="45"><span></span></div></div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">04 · מעבר</span>
+  <h2 class="slide-title">מצב קיים מול מצב עתידי</h2>
+  <div class="vs mt-6" data-reveal="up">
+    <div class="vs__col now"><h4 class="ink-red">היום</h4><ul><li>מיון ידני בתיבה משותפת</li><li>זמן מחזור 4–6 ימים</li><li>אין מקור אמת יחיד</li><li>טיפול תגובתי בסיכון</li></ul></div>
+    <div class="vs__arrow"><svg class="freehand icon--arrow" viewBox="0 0 56 40"><path d="M4,20 C22,10 34,30 48,20 M40,12 L50,20 L40,28"/></svg></div>
+    <div class="vs__col future"><h4 class="ink-green">היעד</h4><ul><li>ניתוב חכם, תעדוף אוטומטי</li><li>פתרון באותו יום</li><li>סביבת תיק מאוחדת</li><li>אותות סיכון חזויים</li></ul></div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">05 · זרימה</span>
+  <h2 class="slide-title">תרשים תהליך וצינור בינה</h2>
+  <div class="flow mt-6" data-reveal="up" data-stagger>
+    <div class="flow__step"><span class="flow__num">1</span><h4>קליטה</h4><p>איסוף פנייה מכל ערוץ.</p></div>
+    <div class="flow__step"><span class="flow__num">2</span><h4>סיווג</h4><p>מודל מתייג כוונה ודחיפות.</p></div>
+    <div class="flow__step"><span class="flow__num">3</span><h4>ניתוב</h4><p>הקצאה לתור המתאים.</p></div>
+    <div class="flow__step"><span class="flow__num">4</span><h4>פתרון</h4><p>נציג + קופיילוט סוגרים תיק.</p></div>
+  </div>
+  <div class="pipeline mt-8" data-reveal="up" data-stagger>
+    <div class="pipeline__stage"><span class="badge ai">קליטה</span><p>מסמכים, פניות, טלמטריה</p></div>
+    <div class="pipeline__stage"><span class="badge ai">הטמעה</span><p>וקטוריזציה ואינדוקס</p></div>
+    <div class="pipeline__stage"><span class="badge ai">היגיון</span><p>LLM + חוקים עסקיים</p></div>
+    <div class="pipeline__stage"><span class="badge ai">פעולה</span><p>ניסוח, ניתוב, אוטומציה</p></div>
+    <div class="pipeline__stage"><span class="badge ai">ממשל</span><p>ביקורת, הערכות, אדם-בלולאה</p></div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">06 · תוכנית</span>
+  <h2 class="slide-title">מפת דרכים, ציר זמן ואבני דרך</h2>
+  <div class="grid grid-2 mt-6" data-reveal="up">
+    <div class="roadmap">
+      <div class="roadmap__lane"><span class="soft text-soft">תשתית</span><div class="roadmap__bar">Q1 · בסיס נתונים ואבטחה</div></div>
+      <div class="roadmap__lane"><span class="soft text-soft">פילוט</span><div class="roadmap__bar p">Q2 · תהליך ראשון</div></div>
+      <div class="roadmap__lane"><span class="soft text-soft">הרחבה</span><div class="roadmap__bar g">Q3 · 3 חטיבות</div></div>
+      <div class="roadmap__lane"><span class="soft text-soft">אופטימיזציה</span><div class="roadmap__bar o">Q4 · עלות והערכות</div></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline__item done"><div class="timeline__date">ינו'</div><strong>הזנקה וגילוי</strong><p>מיפוי בעלי עניין, מדדי בסיס.</p></div>
+      <div class="timeline__item done"><div class="timeline__date">מרץ</div><strong>אישור ארכיטקטורה</strong><p>אבטחה וממשל נתונים אושרו.</p></div>
+      <div class="timeline__item"><div class="timeline__date">יוני</div><strong>פילוט עולה לאוויר</strong><p>תוצאה מדידה תוך 90 יום.</p></div>
+      <div class="timeline__item"><div class="timeline__date">ספט'</div><strong>שער החלטת הרחבה</strong><p>Go / No-go עם ועדת ההיגוי.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">07 · החלטה</span>
+  <h2 class="slide-title">מטריצת סיכון ותעדוף</h2>
+  <div class="grid grid-2 mt-6" data-reveal="up">
+    <div class="matrix-wrap">
+      <div class="matrix">
+        <div class="cell hi"><h5>השפעה גבוהה · סבירות גבוהה</h5><span class="dot ink-red"><svg class="icon icon--sm"><use href="../icons/icons.svg#i-warning"/></svg> איכות נתונים</span><span class="dot ink-red"><svg class="icon icon--sm"><use href="../icons/icons.svg#i-warning"/></svg> סחף מודל</span></div>
+        <div class="cell mid"><h5>השפעה גבוהה · סבירות נמוכה</h5><span class="dot ink-orange">תלות בספק</span></div>
+        <div class="cell mid"><h5>השפעה נמוכה · סבירות גבוהה</h5><span class="dot ink-orange">עייפות משינוי</span></div>
+        <div class="cell lo"><h5>השפעה נמוכה · סבירות נמוכה</h5><span class="dot ink-green">ליטוש ממשק</span></div>
+      </div>
+      <div class="lbl-x">סבירות →</div><div class="lbl-y">השפעה →</div>
+    </div>
+    <div class="stack">
+      <div class="callout stop"><svg class="icon"><use href="../icons/icons.svg#i-warning"/></svg><div><h4>קריטי: מוכנות נתונים</h4><p>חוסם את תחילת הפילוט. אחראי: פלטפורמת נתונים.</p></div></div>
+      <div class="callout warn"><svg class="icon"><use href="../icons/icons.svg#i-flag"/></svg><div><h4>לעקוב: אימוץ שינוי</h4><p>לשלב הטמעה עם הכשרה ותמריצים.</p></div></div>
+      <div class="callout ai"><svg class="icon"><use href="../icons/icons.svg#i-brain"/></svg><div><h4>ממשל בינה מלאכותית</h4><p>אדם-בלולאה + מנגנון הערכות מהיום הראשון.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">08 · מיסגור</span>
+  <h2 class="slide-title">SWOT והחלטות</h2>
+  <div class="grid grid-2 mt-6" data-reveal="up">
+    <div class="swot">
+      <div class="swot__q s"><h4 class="ink-green">חוזקות</h4><ul><li>מצאי נתונים חזק</li><li>גיבוי הנהלה בכירה</li></ul></div>
+      <div class="swot__q w"><h4 class="ink-red">חולשות</h4><ul><li>חוב אינטגרציה מורשת</li><li>פער כישורים ב-MLOps</li></ul></div>
+      <div class="swot__q o"><h4 class="ink-blue">הזדמנויות</h4><ul><li>אוטומציה של 60%+ מהתיקים</li><li>רמות שירות חדשות</li></ul></div>
+      <div class="swot__q t"><h4 class="ink-orange">איומים</h4><ul><li>שינוי רגולטורי</li><li>מתחרים מהירים יותר</li></ul></div>
+    </div>
+    <div class="stack">
+      <div class="decision"><span class="num">1</span><div><strong>לבנות מול לקנות פלטפורמה</strong><p class="text-soft">היברידי: לקנות בסיס, לבנות בידול.</p></div><span class="badge done">הוחלט</span></div>
+      <div class="decision"><span class="num">2</span><div><strong>התהליך הראשון</strong><p class="text-soft">מיון תביעות — נפח גבוה, ROI ברור.</p></div><span class="badge done">הוחלט</span></div>
+      <div class="decision"><span class="num">3</span><div><strong>מודל אירוח</strong><p class="text-soft">אפשרות ריבונית / מנותקת-רשת בבחינה.</p></div><span class="badge at-risk">פתוח</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">09 · סדנה</span>
+  <h2 class="slide-title">לוח סיעור מוחות ופתקיות</h2>
+  <div class="board mt-6" data-reveal="up">
+    <span class="tape tc"></span>
+    <div class="cluster gap-8" style="align-items:flex-start">
+      <div class="sticky drop" style="--rot:-3deg"><span class="pin"></span>לאטמט קודם את מיון התביעות <span class="meta">רעיון · צוות כחול</span></div>
+      <div class="sticky green drop" style="--rot:2deg"><span class="pin green"></span>שימוש חוזר בפלטפורמת הזהות <span class="meta">פתרון</span></div>
+      <div class="sticky pink drop" style="--rot:-1deg"><span class="pin"></span>איכות הנתונים היא החסם האמיתי <span class="meta">בעיה</span></div>
+      <div class="sticky blue drop" style="--rot:3deg"><span class="pin blue"></span>מה אם הקופיילוט ינסח תשובות? <span class="meta">רעיון</span></div>
+      <div class="sticky purple drop" style="--rot:-2deg"><span class="pin"></span>להוסיף מנגנון הערכות לפני הרחבה <span class="meta">בינה · ממשל</span></div>
+    </div>
+    <div class="annot blue" style="position:absolute; inset-inline-end:40px; inset-block-end:26px;">להתמקד כאן</div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">10 · הזדהות</span>
+  <h2 class="slide-title">מפת מסע לקוח</h2>
+  <div class="card mt-6" data-reveal="up">
+    <div class="journey">
+      <div class="journey__stage"><h5>גילוי</h5><div class="journey__line"><div class="journey__pt"></div></div><p>מוצא את השירות ברשת</p></div>
+      <div class="journey__stage"><h5>הגשה</h5><div class="journey__line"><div class="journey__pt mid"></div></div><p>טפסים מבלבלים</p></div>
+      <div class="journey__stage"><h5>המתנה</h5><div class="journey__line"><div class="journey__pt low"></div></div><p>אין עדכוני סטטוס</p></div>
+      <div class="journey__stage"><h5>פתרון</h5><div class="journey__line"><div class="journey__pt mid"></div></div><p>בסופו של דבר טופל</p></div>
+      <div class="journey__stage"><h5>מעקב</h5><div class="journey__line"><div class="journey__pt"></div></div><p>פנייה יזומה</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">11 · בנייה</span>
+  <h2 class="slide-title">שרטוט ארכיטקטורה ו-Wireframe</h2>
+  <div class="grid grid-2 mt-6" data-reveal="up">
+    <div class="arch">
+      <div class="arch__tier"><h5>חוויה</h5><span class="arch__box">סביבת נציג</span><span class="arch__box">פורטל אזרח</span><span class="arch__box">קופיילוט</span></div>
+      <div class="arch__tier"><h5>אינטליגנציה</h5><span class="arch__box">שער LLM</span><span class="arch__box">מאגר וקטורי</span><span class="arch__box">מנגנון הערכות</span></div>
+      <div class="arch__tier"><h5>נתונים ופלטפורמה</h5><span class="arch__box">SAP</span><span class="arch__box">Power BI</span><span class="arch__box">Lakehouse</span><span class="arch__box">IAM</span></div>
+    </div>
+    <div class="wire">
+      <div class="wire__bar md"></div><div class="wire__bar sm"></div>
+      <div class="grid grid-2 gap-2" style="margin-block:var(--s-3)"><div class="wire__block">גרף</div><div class="wire__block">KPI</div></div>
+      <div class="wire__block" style="min-block-size:70px">טבלה / רשימת תיקים</div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">12 · מדידה</span>
+  <h2 class="slide-title">גרפים</h2>
+  <div class="grid grid-3 mt-6" data-reveal="up">
+    <div class="chart-card">
+      <h4>פילוח מאמץ</h4>
+      <div class="cluster between gap-6">
+        <div class="donut" data-donut='[{"value":62,"color":"#7b5cd6"},{"value":24,"color":"#1f6feb"},{"value":14,"color":"#e08a29"}]' data-center="62%"></div>
+        <div class="legend"><span><i style="background:#7b5cd6"></i>אוטומטי 62%</span><span><i style="background:#1f6feb"></i>נתמך 24%</span><span><i style="background:#e08a29"></i>ידני 14%</span></div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h4>תיקים שנפתרו / שבוע</h4>
+      <div class="bars">
+        <div class="bar" style="--h:40%"><span>1.2k</span><small>ש1</small></div>
+        <div class="bar" style="--h:58%;background:var(--ink-blue)"><span>1.7k</span><small>ש2</small></div>
+        <div class="bar" style="--h:72%;background:var(--ink-green)"><span>2.1k</span><small>ש3</small></div>
+        <div class="bar" style="--h:92%;background:var(--ink-purple)"><span>2.7k</span><small>ש4</small></div>
+      </div>
+    </div>
+    <div class="chart-card line-chart">
+      <h4>מגמת אוטומציה</h4>
+      <svg class="draw" viewBox="0 0 220 140">
+        <polyline fill="none" stroke="var(--color-line-strong)" stroke-width="1" points="10,120 210,120"/>
+        <polyline class="freehand" fill="none" stroke="var(--ink-blue)" stroke-width="3" points="10,110 55,80 100,90 145,45 200,20"/>
+        <circle cx="200" cy="20" r="5" fill="var(--ink-blue)"/>
+      </svg>
+      <p class="text-soft fs-sm">שיעור אוטומציה, מגמת 6 חודשים.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">13 · המלצה</span>
+  <h2 class="slide-title">המלצות וצעדים הבאים</h2>
+  <div class="grid grid-3 mt-8" data-reveal="up" data-stagger>
+    <div class="reco"><span class="reco__rank">1</span><h4 class="ink-green">להשיק פילוט מיון תביעות</h4><p>ROI גבוה, סיכון אינטגרציה נמוך. תוצאה תוך 90 יום.</p></div>
+    <div class="reco"><span class="reco__rank">2</span><h4 class="ink-green">להקים ממשל בינה מלאכותית</h4><p>הערכות, אדם-בלולאה ומעקב לפני החלטת הרחבה.</p></div>
+    <div class="reco"><span class="reco__rank">3</span><h4 class="ink-green">לתקן את יסוד הנתונים</h4><p>איכות ושושלת לשתי מערכות המקור בהיקף.</p></div>
+  </div>
+  <div class="card mt-8">
+    <h4>פריטי פעולה</h4>
+    <div class="action done"><span class="box"></span><span class="txt">למדוד בסיס זמן מחזור ועלות</span><span class="owner chip">תפעול</span></div>
+    <div class="action done"><span class="box"></span><span class="txt">סקירת ארכיטקטורת אבטחה</span><span class="owner chip">CISO</span></div>
+    <div class="action"><span class="box"></span><span class="txt">לחתום על כתב עבודה לפילוט</span><span class="owner chip">PMO</span></div>
+    <div class="action"><span class="box"></span><span class="txt">להקים מנגנון הערכות</span><span class="owner chip">גילדת בינה</span></div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">14 · קול</span>
+  <div class="grid grid-2 mt-6" data-reveal="up">
+    <div class="card fold-corner"><blockquote class="quote">אם נבנה נכון את יסוד הנתונים, הבינה תדאג לעצמה. החלק הקשה מעולם לא היה המודל.<cite>— מנהל דיגיטל ראשי, ועדת היגוי</cite></blockquote></div>
+    <div class="ai-brain floaty">
+      <span class="badge ai">שכבת אינטליגנציה</span>
+      <div class="mt-4"><span class="node">אחזור</span><span class="node">היגיון</span><span class="node">מעקות בטיחות</span><span class="node">הערכות</span><span class="node">אדם-בלולאה</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <span class="tag">15 · השוואה</span>
+  <h2 class="slide-title">טבלת השוואה וסטטוס</h2>
+  <table class="tbl mt-6" data-reveal="up">
+    <thead><tr><th>יכולת</th><th>היום</th><th>פילוט</th><th>בהרחבה</th><th>סטטוס</th></tr></thead>
+    <tbody>
+      <tr><td>סיווג אוטומטי</td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="badge on-track">במסלול</span></td></tr>
+      <tr><td>ייצור טיוטות</td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="tick">✓</span></td><td><span class="badge ai">בינה</span></td></tr>
+      <tr><td>סיכון חזוי</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="badge at-risk">בסיכון</span></td></tr>
+      <tr><td>אירוח ריבוני</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="tick">✓</span></td><td><span class="badge blocked">חסום</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+</main>
+
+<footer class="container">
+  <div class="slide-footer">
+    <span>אַטֶלְיֶה · פריימוורק מצגות מחלקתי</span>
+    <span class="cluster"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Vanilla JS</span></span>
+    <span class="page-num">© נעם חנימוב · חסוי</span>
+  </div>
+</footer>
+
+<script type="module" src="../js/index.js"></script>
+</body>
+</html>
