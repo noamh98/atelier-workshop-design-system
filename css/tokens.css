@@ -1,0 +1,129 @@
+/* =====================================================================
+   ATELIER — Strategy Workshop Presentation Design System
+   01 · DESIGN TOKENS
+   The single source of truth. Never hardcode a value in a component —
+   reach for a token. Themes only ever re-map these variables.
+   ===================================================================== */
+
+:root {
+  /* ---- Ink System -------------------------------------------------
+     Semantic marker inks used across the whole system.
+     black=titles · blue=ideas · red=problems · green=solutions
+     orange=risks · purple=AI                                        */
+  --ink-black:  #1c1c1e;
+  --ink-blue:   #1f6feb;
+  --ink-red:    #d1414b;
+  --ink-green:  #2e9e5b;
+  --ink-orange: #e08a29;
+  --ink-purple: #7b5cd6;
+
+  --ink-blue-wash:   rgba(31, 111, 235, .12);
+  --ink-red-wash:    rgba(209, 65, 75, .12);
+  --ink-green-wash:  rgba(46, 158, 91, .12);
+  --ink-orange-wash: rgba(224, 138, 41, .14);
+  --ink-purple-wash: rgba(123, 92, 214, .12);
+
+  /* Highlighter (marker) translucent inks */
+  --hl-yellow: rgba(255, 214, 64, .55);
+  --hl-green:  rgba(120, 214, 130, .45);
+  --hl-blue:   rgba(120, 176, 255, .45);
+  --hl-pink:   rgba(255, 150, 180, .45);
+
+  /* ---- Surface / Paper -------------------------------------------- */
+  --paper:        #f6f3ec;   /* warm cream page            */
+  --paper-2:      #efe9dd;   /* recessed panel             */
+  --paper-card:   #fffdf8;   /* raised sticky / card       */
+  --paper-line:   #d9d2c4;   /* rule / dot-grid line       */
+  --ink-faint:    #b7ad9b;   /* faint pencil               */
+  --text:         #26242a;
+  --text-soft:    #57535d;
+  --text-mute:    #8a8590;
+
+  /* Sticky note pigments */
+  --sticky-yellow: #ffe9a8;
+  --sticky-blue:   #bfe0ff;
+  --sticky-green:  #c7edc0;
+  --sticky-pink:   #ffd0d6;
+  --sticky-purple: #ddd2f7;
+  --tape:          rgba(226, 214, 176, .72);
+
+  /* ---- Typography -------------------------------------------------- */
+  --font-sans: "Inter", "Segoe UI", "Assistant", "Rubik", system-ui, -apple-system, sans-serif;
+  --font-hand: "Caveat", "Gochi Hand", "Comic Sans MS", cursive;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, monospace;
+
+  --fs-hero:  clamp(2.6rem, 4.4vw, 4rem);
+  --fs-h1:    clamp(2rem, 3.2vw, 2.8rem);
+  --fs-h2:    clamp(1.5rem, 2.4vw, 2rem);
+  --fs-h3:    1.35rem;
+  --fs-lead:  1.15rem;
+  --fs-body:  1rem;
+  --fs-sm:    .875rem;
+  --fs-xs:    .75rem;
+
+  --lh-tight: 1.15;
+  --lh-body:  1.6;
+
+  --fw-reg: 400;
+  --fw-med: 500;
+  --fw-semi: 600;
+  --fw-bold: 700;
+  --fw-black: 800;
+
+  /* ---- Spacing scale (4pt) ---------------------------------------- */
+  --s-1: 4px;   --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+  --s-5: 20px;  --s-6: 24px;  --s-8: 32px;  --s-10: 40px;
+  --s-12: 48px; --s-16: 64px; --s-20: 80px; --s-24: 96px;
+
+  /* ---- Radius ------------------------------------------------------ */
+  --r-xs: 4px; --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --r-xl: 26px;
+  --r-pill: 999px;
+
+  /* ---- Elevation (soft, paper-like) ------------------------------- */
+  --sh-1: 0 1px 2px rgba(40,34,20,.10), 0 1px 1px rgba(40,34,20,.06);
+  --sh-2: 0 4px 10px rgba(40,34,20,.10), 0 2px 4px rgba(40,34,20,.07);
+  --sh-3: 0 12px 28px rgba(40,34,20,.14), 0 4px 8px rgba(40,34,20,.08);
+  --sh-lift: 0 18px 40px rgba(40,34,20,.20);
+
+  /* ---- Motion ------------------------------------------------------ */
+  --ease-out: cubic-bezier(.16,.84,.44,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --t-fast: .18s;
+  --t-med:  .32s;
+  --t-slow: .6s;
+
+  /* ---- Layout ------------------------------------------------------ */
+  --page-w: 1180px;
+  --slide-ratio: 16 / 9;
+}
+
+/* ---- DARK THEME (blueprint / studio at night) -------------------- */
+[data-theme="dark"] {
+  --paper:      #14161c;
+  --paper-2:    #1b1e26;
+  --paper-card: #20242e;
+  --paper-line: #2c313d;
+  --ink-faint:  #3a4150;
+  --text:       #e9edf4;
+  --text-soft:  #b3bccb;
+  --text-mute:  #7c8698;
+
+  --ink-black:  #f2f4f8;
+  --ink-blue:   #5b9bff;
+  --ink-red:    #ff6d78;
+  --ink-green:  #4fce82;
+  --ink-orange: #ffb04d;
+  --ink-purple: #a487ff;
+
+  --sticky-yellow: #4a4327;
+  --sticky-blue:   #1f3a52;
+  --sticky-green:  #234a2c;
+  --sticky-pink:   #4d2733;
+  --sticky-purple: #34294f;
+  --tape:          rgba(120,110,80,.42);
+
+  --sh-1: 0 1px 2px rgba(0,0,0,.5);
+  --sh-2: 0 4px 12px rgba(0,0,0,.5);
+  --sh-3: 0 14px 32px rgba(0,0,0,.6);
+  --sh-lift: 0 20px 48px rgba(0,0,0,.7);
+}
