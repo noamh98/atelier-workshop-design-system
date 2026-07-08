@@ -1,0 +1,56 @@
+/* ============================================================
+   ATELIER — Enterprise Presentation Framework
+   Single entry stylesheet. Import this one file:
+       <link rel="stylesheet" href="design-system/atelier.css">
+   Then set a theme on <html>:  data-theme="workshop|glass|scandi|ai"
+   Cascade order matters — layers flow tokens → core → theme →
+   components → utilities so overrides resolve predictably.
+   ============================================================ */
+
+/* 1 · TOKENS — single source of truth (CSS variables) */
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/radius.css";
+@import "./tokens/shadows.css";
+@import "./tokens/motion.css";
+@import "./tokens/z-index.css";
+@import "./tokens/borders.css";
+@import "./tokens/paper.css";
+
+/* 2 · CORE — reset, base typography, layout primitives */
+@import "./core/reset.css";
+@import "./core/base.css";
+@import "./core/layout.css";
+
+/* 3 · THEMES — each remaps tokens; workshop is default */
+@import "./themes/hand-drawn-workshop.css";
+@import "./themes/glass-executive.css";
+@import "./themes/scandinavian.css";
+@import "./themes/microsoft-ai.css";
+
+/* 4 · ICONS */
+@import "./icons/icons.css";
+
+/* 5 · COMPONENTS — token-driven, theme-agnostic */
+@import "./components/primitives.css";
+@import "./components/annotations.css";
+@import "./components/hero.css";
+@import "./components/kpi.css";
+@import "./components/summary.css";
+@import "./components/comparison.css";
+@import "./components/process.css";
+@import "./components/roadmap.css";
+@import "./components/journey.css";
+@import "./components/matrix.css";
+@import "./components/architecture.css";
+@import "./components/charts.css";
+@import "./components/cards.css";
+@import "./components/dashboard.css";
+@import "./components/navigation.css";
+
+/* 6 · UTILITIES — helpers, animations, rtl, print (last word) */
+@import "./utilities/utilities.css";
+@import "./utilities/animations.css";
+@import "./utilities/rtl.css";
+@import "./utilities/print.css";

@@ -1,83 +1,102 @@
-# ATELIER — Strategy Workshop Presentation Design System
+<div align="center">
 
-An enterprise-grade, reusable component framework for building **executive
-strategy-workshop presentations** that look like the notebook of a senior
-consultant: paper texture, ink system, hand-drawn annotations, sticky notes —
-handcrafted, never generic.
+# Atelier
 
-Built for decks across **AI · Digital Transformation · SAP · Power BI ·
-Government · Insurance · Transportation · Banking · Healthcare · Cyber Security ·
-Strategy · Executive Reports.**
+**A dependency‑free, AI‑ready design system for enterprise presentations.**
 
-> **Stack:** HTML · CSS · Vanilla JS. **No** Bootstrap, Tailwind, React, Vue or
-> any UI library. SVG icons only. Zero dependencies (fonts optional via CDN).
+Strategy workshops · AI & digital transformation · SAP · Power BI · government ·
+insurance · banking · healthcare · cyber · executive reports.
 
----
+HTML · CSS · Vanilla JS — no Bootstrap, Tailwind, React, Vue, or build step.
 
-## ✦ Highlights
-
-- **Ink System** — semantic marker colours: black = titles, blue = ideas,
-  red = problems, green = solutions, orange = risks, purple = AI.
-- **Paper surfaces** — notebook, dot-grid, blueprint, whiteboard.
-- **Physical annotations** — masking tape, push pins, paper clips, folded
-  corners, marker circles, freehand arrows, highlighter, struck text,
-  very-subtle coffee stains.
-- **RTL / LTR** (Hebrew + English) via CSS logical properties.
-- **Dark / Light** themes, remembered in `localStorage`.
-- **Print / PDF ready** (`Export` button → `A4 landscape`).
-- **Reveal-on-scroll**, count-up KPIs, stroke-draw SVG, `prefers-reduced-motion`
-  respected.
-
-## ✦ Structure
-
-```
-ds/
-├── index.html                 # full component showcase & living documentation
-├── css/
-│   ├── tokens.css             # 01 design tokens (single source of truth)
-│   ├── base.css               # 02 reset, typography, layout primitives
-│   ├── paper.css              # 03 surfaces + physical annotations
-│   ├── animations.css         # 04 reveal / draw / sticky-drop / hover
-│   ├── components.css         # 05 the reusable component library
-│   └── print.css              # 06 presentation / PDF export
-├── js/
-│   └── main.js                # theme, direction, reveal, count-up, donut charts
-└── templates/
-    └── executive-deck.html    # ready-to-fork 16:9 slide deck
-```
-
-## ✦ Quick start
-
-```bash
-# any static server works — no build step
-python3 -m http.server 8080
-# open http://localhost:8080/index.html
-```
-
-Or just open `index.html` in a browser.
-
-## ✦ Component library
-
-Headers · Hero · Executive Summary · KPI Cards · Progress · Current vs Future ·
-Process Flow · AI Pipeline · Roadmap · Timeline · Milestones · Risk Matrix ·
-Priority Matrix · SWOT · Decision Cards · Recommendation Cards · Action Items ·
-Next Steps · Sticky Notes · Brainstorm Board · Callouts · Status Badges ·
-Quote Blocks · Journey Map · Architecture Sketch · Wireframe Dashboard ·
-Swimlanes · Value Stream · Comparison Table & Cards · AI Brain · Donut / Bar /
-Line charts · Footer / Page numbers / Slide titles.
-
-## ✦ Theming
-
-Everything is driven by CSS custom properties in `css/tokens.css`.
-`[data-theme="dark"]` re-maps the same tokens; components never hardcode values.
-Toggle at runtime with `window.Atelier.toggleTheme()` / `toggleDir()`.
-
-## ✦ Accessibility
-
-Semantic HTML, visible focus rings, `prefers-reduced-motion`, and readable
-contrast in both themes.
+</div>
 
 ---
 
-© Noam Hanimov — internal / confidential. For enterprise & air-gapped use the
-CDN font link can be removed; system-font fallbacks are already defined.
+## Why
+
+Executive decks are usually rebuilt from scratch every time. Atelier turns them into a
+**component system**: one token layer, four interchangeable themes, and 30+ composable
+components that read like a senior consultant's workshop notebook — and that an AI agent
+can assemble automatically.
+
+## Features
+
+- **One token layer → four themes.** Switch the entire look with a single
+  `data-theme` attribute: *Hand‑Drawn Strategy Workshop* (flagship), *Glass Executive*,
+  *Scandinavian Executive*, *Microsoft AI Premium*.
+- **30+ components.** KPIs, executive summary, current‑vs‑future, process flows, AI
+  pipelines, roadmaps, timelines, journey maps, risk/priority/SWOT matrices,
+  architecture sketches, charts, decision & recommendation cards, sticky‑note boards,
+  comparison tables, and more.
+- **RTL / Hebrew first‑class.** Logical‑property layout; a full Hebrew showcase ships in
+  `examples/gallery.he.html`.
+- **Dark mode, print & PDF ready.** Orthogonal `data-scheme="dark"` and a dedicated
+  print stylesheet.
+- **Presentation mode.** Opt‑in deck navigation with keyboard shortcuts
+  (`←/→/Space/Home/End/F/P`).
+- **AI‑composable.** Predictable, self‑contained, `data-*`‑driven components — see
+  [`design-system/docs/ai-usage.md`](design-system/docs/ai-usage.md).
+- **Zero dependencies.** Runs from `file://`; SVG sketch icons only, no emoji.
+
+## Quick start
+
+```html
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="workshop" data-scheme="light">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="design-system/atelier.css">
+</head>
+<body>
+  <section class="section container" data-reveal="up">
+    <span class="tag">01 · Summary</span>
+    <h2 class="slide-title">Executive summary</h2>
+    <div class="kpi green">
+      <span class="kpi__label">Annual saving</span>
+      <div class="kpi__value" data-count="11.4" data-decimals="1" data-prefix="$" data-suffix="M">$0M</div>
+    </div>
+  </section>
+  <script type="module" src="design-system/js/index.js"></script>
+</body>
+</html>
+```
+
+## Examples
+
+| File | What |
+|------|------|
+| [`design-system/examples/gallery.html`](design-system/examples/gallery.html) | Every component (English) |
+| [`design-system/examples/gallery.he.html`](design-system/examples/gallery.he.html) | Every component (Hebrew, RTL) |
+| [`design-system/examples/executive-deck.html`](design-system/examples/executive-deck.html) | Presentation / deck mode |
+
+> Tip: open via a static server (`python3 -m http.server`) so ES modules and the icon
+> sprite load — some browsers block them on `file://`.
+
+## Documentation
+
+- [Overview & folder structure](design-system/docs/README.md)
+- [Design tokens](design-system/docs/tokens.md)
+- [Components](design-system/docs/components.md)
+- [Themes](design-system/docs/themes.md)
+- [AI usage guide](design-system/docs/ai-usage.md)
+
+## Project layout
+
+```
+design-system/
+├── atelier.css          Single stylesheet entry point
+├── tokens/              Source of truth (colors, type, spacing, motion, …)
+├── core/                reset · base · layout (grid, container, slide)
+├── themes/              4 themes — remap tokens only
+├── components/          15 files, 30+ components
+├── utilities/           animations · rtl · print · helpers
+├── icons/               SVG sketch sprite
+├── js/                  ES modules (theme, reveal, counters, charts, deck)
+├── examples/            gallery.html · gallery.he.html · executive-deck.html
+└── docs/                Full documentation
+```
+
+## License
+
+MIT.

@@ -1,0 +1,16 @@
+/* ============================================================
+   TOKENS · BORDERS
+   Border widths + the "ink stroke" styles used by sketch UI.
+   ============================================================ */
+:root {
+  --bw-hair:1px; --bw-thin:1.5px; --bw-base:2px; --bw-thick:3px;
+
+  --border-hairline: var(--bw-hair) solid var(--color-line);
+  --border-base:     var(--bw-thin) solid var(--color-line-strong);
+  --border-ink:      var(--bw-base) solid var(--ink-black);
+
+  /* Sketch borders — irregular dash rhythm reads as pen strokes */
+  --border-sketch: var(--bw-base) solid var(--color-text);
+  --dash-sketch: 6px 5px;
+  --dash-cut: 2px 6px;
+}

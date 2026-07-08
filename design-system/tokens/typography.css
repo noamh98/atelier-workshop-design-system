@@ -1,0 +1,31 @@
+/* ============================================================
+   TOKENS · TYPOGRAPHY
+   Fluid type scale (clamp), families, weights, line-heights.
+   Handwritten family reserved for annotations ONLY.
+   ============================================================ */
+:root {
+  --font-sans: "Inter", "Assistant", ui-sans-serif, system-ui, -apple-system,
+               "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-hand: "Caveat", "Assistant", ui-rounded, "Segoe Print", cursive;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo,
+               Consolas, monospace;
+
+  /* Fluid scale — min at 360px viewport, max at 1280px */
+  --fs-2xs: clamp(.68rem, .66rem + .1vw, .74rem);
+  --fs-xs:  clamp(.76rem, .72rem + .18vw, .84rem);
+  --fs-sm:  clamp(.86rem, .82rem + .22vw, .95rem);
+  --fs-md:  clamp(1rem, .95rem + .28vw, 1.08rem);
+  --fs-lg:  clamp(1.15rem, 1.05rem + .5vw, 1.35rem);
+  --fs-xl:  clamp(1.4rem, 1.2rem + 1vw, 1.85rem);
+  --fs-2xl: clamp(1.8rem, 1.4rem + 1.9vw, 2.6rem);
+  --fs-3xl: clamp(2.3rem, 1.7rem + 3vw, 3.6rem);
+  --fs-4xl: clamp(2.8rem, 1.9rem + 4.4vw, 4.6rem);
+
+  --fw-regular:400; --fw-medium:500; --fw-semibold:600; --fw-bold:700; --fw-black:800;
+
+  --lh-tight:1.12; --lh-snug:1.28; --lh-normal:1.55; --lh-relaxed:1.7;
+
+  --tracking-tight:-.02em; --tracking-normal:0; --tracking-wide:.04em; --tracking-caps:.14em;
+
+  --measure:66ch; /* optimal reading width */
+}

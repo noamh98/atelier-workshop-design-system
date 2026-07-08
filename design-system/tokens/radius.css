@@ -1,0 +1,21 @@
+/* ============================================================
+   TOKENS · RADIUS
+   --radius-organic drives the "hand-cut paper" corner feel.
+   Themes override to sharpen (glass/microsoft) or soften.
+   ============================================================ */
+:root {
+  --r-none:0;
+  --r-xs:4px;
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:18px;
+  --r-xl:26px;
+  --r-pill:999px;
+  --r-circle:50%;
+
+  /* Slightly irregular radii — evokes hand-trimmed paper */
+  --radius-organic: 14px 10px 16px 9px;
+  --radius-card: var(--r-lg);
+  --radius-control: var(--r-sm);
+  --radius-surface: var(--r-xl);
+}

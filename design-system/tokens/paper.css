@@ -1,0 +1,31 @@
+/* ============================================================
+   TOKENS · PAPER & TEXTURE
+   Reusable background layers (grain, dot-grid, ruled, blueprint)
+   expressed as CSS variables so any surface can opt in.
+   These are token *recipes*; themes decide whether to apply them.
+   ============================================================ */
+:root {
+  --paper-grain:
+    radial-gradient(circle at 20% 15%, rgba(0,0,0,.014) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,.012) 0 1px, transparent 1px),
+    radial-gradient(circle at 45% 85%, rgba(0,0,0,.010) 0 1px, transparent 1px);
+  --paper-grain-size: 7px 7px, 11px 11px, 13px 13px;
+
+  --dot-grid:
+    radial-gradient(circle, color-mix(in srgb, var(--color-line-strong) 60%, transparent) 1px, transparent 1.4px);
+  --dot-grid-size: 22px 22px;
+
+  --ruled-lines:
+    repeating-linear-gradient(to bottom, transparent 0 31px,
+      color-mix(in srgb, var(--ink-blue) 16%, transparent) 31px 32px);
+
+  --blueprint:
+    linear-gradient(color-mix(in srgb, var(--ink-blue) 20%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--ink-blue) 20%, transparent) 1px, transparent 1px);
+  --blueprint-size: 26px 26px;
+
+  /* Highlighter / marker wash used by .mark and .marker-circle */
+  --marker-yellow: color-mix(in srgb, var(--c-amber-500) 42%, transparent);
+  --marker-blue:   color-mix(in srgb, var(--ink-blue) 26%, transparent);
+  --marker-green:  color-mix(in srgb, var(--ink-green) 30%, transparent);
+}

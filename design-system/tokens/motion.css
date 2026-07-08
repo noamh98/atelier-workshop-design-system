@@ -1,0 +1,20 @@
+/* ============================================================
+   TOKENS · MOTION
+   Durations, easings, and named transitions. All motion is
+   opt-out via prefers-reduced-motion (see utilities/animations).
+   ============================================================ */
+:root {
+  --dur-0:0ms; --dur-1:120ms; --dur-2:200ms; --dur-3:320ms;
+  --dur-4:480ms; --dur-5:680ms; --dur-draw:1100ms;
+
+  --ease-standard:cubic-bezier(.2,.0,.0,1);
+  --ease-emphasized:cubic-bezier(.2,.0,0,1.2);
+  --ease-exit:cubic-bezier(.4,.0,1,1);
+  --ease-spring:cubic-bezier(.34,1.56,.64,1);
+  --ease-ink:cubic-bezier(.65,.05,.36,1);
+
+  --transition-base: color var(--dur-2) var(--ease-standard),
+                     background-color var(--dur-2) var(--ease-standard),
+                     border-color var(--dur-2) var(--ease-standard),
+                     box-shadow var(--dur-2) var(--ease-standard);
+}

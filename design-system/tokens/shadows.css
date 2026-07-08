@@ -1,0 +1,26 @@
+/* ============================================================
+   TOKENS · ELEVATION (shadows)
+   Layered, low-contrast shadows. Workshop theme adds a subtle
+   "lifted paper" cast; glass theme adds ambient blur glow.
+   ============================================================ */
+:root {
+  --shadow-color: 220 40% 20%;
+
+  --elev-0: none;
+  --elev-1: 0 1px 2px hsl(var(--shadow-color) / .06),
+            0 1px 1px hsl(var(--shadow-color) / .04);
+  --elev-2: 0 2px 4px hsl(var(--shadow-color) / .07),
+            0 4px 10px hsl(var(--shadow-color) / .06);
+  --elev-3: 0 6px 14px hsl(var(--shadow-color) / .08),
+            0 12px 28px hsl(var(--shadow-color) / .08);
+  --elev-4: 0 14px 32px hsl(var(--shadow-color) / .12),
+            0 30px 60px hsl(var(--shadow-color) / .10);
+
+  /* Paper lift — asymmetric, as if a sheet rests on the desk */
+  --shadow-paper: 0 1px 0 rgba(0,0,0,.02),
+                  6px 10px 22px -12px hsl(var(--shadow-color) / .28);
+
+  --ring-focus: 0 0 0 3px color-mix(in srgb, var(--color-focus) 45%, transparent);
+}
+
+[data-scheme="dark"] { --shadow-color: 220 60% 2%; }

@@ -1,0 +1,77 @@
+/* ============================================================
+   TOKENS · COLORS
+   Primitive palette + semantic aliases. Themes remap semantics.
+   Never reference primitives directly in components — use semantics.
+   ============================================================ */
+:root {
+  /* --- Primitive scales --------------------------------------- */
+  --c-ink-900:#12141a; --c-ink-800:#1b1e26; --c-ink-700:#2a2f3a;
+  --c-ink-600:#3d4351; --c-ink-500:#5a616f; --c-ink-400:#828a99;
+  --c-ink-300:#aeb4c0; --c-ink-200:#d5d9e0; --c-ink-100:#e9ecf1; --c-ink-50:#f5f6f9;
+
+  --c-paper-50:#ffffff; --c-paper-100:#fbfaf6; --c-paper-200:#f4f1e8; --c-paper-300:#ece7d8;
+
+  /* Semantic ink system — the heart of the workshop language */
+  --c-blue-600:#155bd5; --c-blue-500:#1f6feb; --c-blue-100:#dbeafe;
+  --c-red-600:#c62f3b;  --c-red-500:#e2445c;  --c-red-100:#fde3e6;
+  --c-green-600:#1f9d63;--c-green-500:#27b877; --c-green-100:#d8f5e6;
+  --c-orange-600:#d1791f;--c-orange-500:#e08a29;--c-orange-100:#fdeacc;
+  --c-purple-600:#6a45c9;--c-purple-500:#7b5cd6;--c-purple-100:#ece2fb;
+  --c-teal-500:#1aa5b0;  --c-amber-500:#e0b429;
+
+  /* --- Semantic aliases (light default) ----------------------- */
+  --color-bg:              var(--c-paper-100);
+  --color-surface:         var(--c-paper-50);
+  --color-surface-sunken:  var(--c-paper-200);
+  --color-line:            #e4ddca;
+  --color-line-strong:     #cfc6ac;
+
+  --color-text:            var(--c-ink-800);
+  --color-text-soft:       var(--c-ink-500);
+  --color-text-muted:      var(--c-ink-400);
+  --color-text-invert:     var(--c-paper-50);
+
+  --ink-black:  var(--c-ink-900);   /* titles / structure */
+  --ink-blue:   var(--c-blue-500);  /* ideas */
+  --ink-red:    var(--c-red-500);   /* problems */
+  --ink-green:  var(--c-green-500); /* solutions */
+  --ink-orange: var(--c-orange-500);/* risks */
+  --ink-purple: var(--c-purple-500);/* AI */
+
+  --ink-blue-soft:  var(--c-blue-100);
+  --ink-red-soft:   var(--c-red-100);
+  --ink-green-soft: var(--c-green-100);
+  --ink-orange-soft:var(--c-orange-100);
+  --ink-purple-soft:var(--c-purple-100);
+
+  --color-accent:       var(--ink-blue);
+  --color-accent-quiet: color-mix(in srgb, var(--ink-blue) 12%, transparent);
+  --color-focus:        var(--c-blue-600);
+
+  /* status */
+  --status-on-track: var(--ink-green);
+  --status-at-risk:  var(--ink-orange);
+  --status-blocked:  var(--ink-red);
+  --status-done:     var(--ink-blue);
+}
+
+/* --- Dark scheme (opt-in via [data-scheme="dark"]) ------------ */
+[data-scheme="dark"] {
+  --color-bg:             #0e1016;
+  --color-surface:        #161922;
+  --color-surface-sunken: #1d2130;
+  --color-line:           #262b39;
+  --color-line-strong:    #333a4d;
+
+  --color-text:       #eef1f7;
+  --color-text-soft:  #aab2c2;
+  --color-text-muted: #7c8598;
+  --color-text-invert:#0e1016;
+
+  --ink-black:  #f2f4fa;
+  --ink-blue:   #5b9bff;
+  --ink-red:    #ff7089;
+  --ink-green:  #48d69a;
+  --ink-orange: #f5a94e;
+  --ink-purple: #a98bf0;
+}
