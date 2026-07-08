@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Executive Deck — ATELIER template</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/paper.css">
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/print.css">
+</head>
+<body class="paper-surface">
+<header class="toolbar no-print" style="position:sticky;top:0;z-index:50;display:flex;gap:12px;padding:12px 24px;border-bottom:1px solid var(--paper-line)">
+  <strong>Executive Deck</strong><span style="margin-inline-start:auto"></span>
+  <button class="btn ghost" data-action="dir">◧ <span data-dir-label>LTR</span></button>
+  <button class="btn ghost" data-action="theme">◐ <span data-theme-label>Light</span></button>
+  <button class="btn" data-action="print">☉ Export PDF</button>
+</header>
+
+<main class="container deck" style="padding-block:var(--s-10)">
+
+  <!-- SLIDE 1 · Title -->
+  <section class="slide surf-dotgrid" data-reveal="paper">
+    <span class="tape tr"></span>
+    <span class="eyebrow">Strategy Workshop · Confidential</span>
+    <h1 style="font-size:var(--fs-hero);max-width:18ch">AI Operating Model — Board Review</h1>
+    <p class="hero__lead">A 90-day pilot to automate high-volume casework, with governance built in from day one.</p>
+    <div class="annot blue" style="margin-top:var(--s-6)">prepared for the steering committee ✏️</div>
+    <div class="slide-footer"><span>ATELIER</span><span class="page-num">01</span></div>
+  </section>
+
+  <!-- SLIDE 2 · Executive summary -->
+  <section class="slide" data-reveal="up">
+    <h2 class="slide-title">Executive Summary
+      <svg class="underline" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2,8 C60,2 140,2 198,7"/></svg></h2>
+    <div class="exec-summary" style="margin-top:var(--s-6)">
+      <div class="card fold-corner"><ul class="points">
+        <li>Manual rework costs <strong>~₪18M</strong>/yr.</li>
+        <li>AI can automate <span class="mark">62%</span> of casework in 9 months.</li>
+        <li>Pilot delivers a measurable outcome in 90 days.</li>
+      </ul></div>
+      <div class="stack">
+        <div class="kpi green"><span class="kpi__label">Annual saving</span><div class="kpi__value" data-count="11.4" data-prefix="₪" data-suffix="M">₪0M</div></div>
+        <div class="kpi purple"><span class="kpi__label">Automation</span><div class="kpi__value" data-count="62" data-suffix="%">0%</div></div>
+      </div>
+    </div>
+    <div class="slide-footer"><span>ATELIER</span><span class="page-num">02</span></div>
+  </section>
+
+  <!-- SLIDE 3 · Roadmap -->
+  <section class="slide" data-reveal="up">
+    <h2 class="slide-title">The Plan</h2>
+    <div class="roadmap" style="margin-top:var(--s-6)">
+      <div class="roadmap__lane"><span class="soft">Foundation</span><div class="roadmap__bar">Q1 · Data & security</div></div>
+      <div class="roadmap__lane"><span class="soft">Pilot</span><div class="roadmap__bar p">Q2 · First workflow</div></div>
+      <div class="roadmap__lane"><span class="soft">Scale</span><div class="roadmap__bar g">Q3 · Three divisions</div></div>
+    </div>
+    <div class="slide-footer"><span>ATELIER</span><span class="page-num">03</span></div>
+  </section>
+
+</main>
+<script src="../js/main.js"></script>
+</body>
+</html>
