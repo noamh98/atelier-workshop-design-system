@@ -1,0 +1,16 @@
+/* =====================================================================
+   06 · PRINT — presentation & PDF export
+   ===================================================================== */
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  body { background: #fff !important; }
+  .no-print, .toolbar, .side-nav { display: none !important; }
+  .paper-surface::after { display: none; }
+  [data-reveal], [data-stagger] > * { opacity: 1 !important; animation: none !important; }
+  .slide, .card, .kpi, .sticky, .chart-card, .reco {
+    box-shadow: none !important; break-inside: avoid; page-break-inside: avoid;
+  }
+  .slide { border: 1px solid #ccc; page-break-after: always; }
+  a { color: inherit; text-decoration: none; }
+  .freehand path, .marker-circle path, .slide-title .underline path { stroke-dashoffset: 0 !important; }
+}
