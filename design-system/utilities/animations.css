@@ -1,0 +1,58 @@
+/* ============================================================
+   UTILITIES · ANIMATIONS
+   Reveal-on-scroll, ink draw, marker sweep, sticky drop, float.
+   Driven by data-attributes so JS/AI can compose them safely.
+   All effects collapse to instant under prefers-reduced-motion.
+   ============================================================ */
+
+/* Reveal — element starts hidden; JS adds .is-in when in view */
+[data-reveal]{ opacity:0; transition:opacity var(--dur-4) var(--ease-standard),
+  transform var(--dur-4) var(--ease-standard); will-change:opacity,transform; }
+[data-reveal="up"]{ transform:translateY(18px); }
+[data-reveal="down"]{ transform:translateY(-18px); }
+[data-reveal="in"]{ transform:scale(.97); }
+[data-reveal].is-in{ opacity:1; transform:none; }
+
+/* Stagger children */
+[data-stagger] > *{ opacity:0; transform:translateY(14px);
+  transition:opacity var(--dur-3) var(--ease-standard), transform var(--dur-3) var(--ease-standard); }
+[data-stagger].is-in > *{ opacity:1; transform:none; }
+[data-stagger].is-in > *:nth-child(1){ transition-delay:40ms; }
+[data-stagger].is-in > *:nth-child(2){ transition-delay:110ms; }
+[data-stagger].is-in > *:nth-child(3){ transition-delay:180ms; }
+[data-stagger].is-in > *:nth-child(4){ transition-delay:250ms; }
+[data-stagger].is-in > *:nth-child(5){ transition-delay:320ms; }
+[data-stagger].is-in > *:nth-child(6){ transition-delay:390ms; }
+
+/* Ink draw — for SVG strokes (underlines, arrows, circles) */
+.draw path,.draw polyline,.draw circle{
+  stroke-dasharray:var(--len,1000); stroke-dashoffset:var(--len,1000); }
+.draw.is-in path,.draw.is-in polyline,.draw.is-in circle{
+  animation:ink-draw var(--dur-draw) var(--ease-ink) forwards; }
+@keyframes ink-draw{ to{ stroke-dashoffset:0; } }
+
+/* Marker sweep — highlight grows from the start edge */
+.marker-sweep{ background-image:linear-gradient(var(--marker-yellow),var(--marker-yellow));
+  background-repeat:no-repeat; background-size:0% 62%; background-position:0 78%;
+  transition:background-size var(--dur-4) var(--ease-emphasized) .2s; }
+.marker-sweep.is-in{ background-size:100% 62%; }
+
+/* Sticky drop — notes fall onto the board */
+.drop{ opacity:0; transform:translateY(-16px) rotate(var(--rot,0)); }
+.drop.is-in{ animation:sticky-drop var(--dur-4) var(--ease-spring) forwards; }
+@keyframes sticky-drop{ 60%{opacity:1;} to{ opacity:1; transform:translateY(0) rotate(var(--rot,0)); } }
+
+/* Ambient float — reserved for AI brain / hero accents */
+.floaty{ animation:floaty 6s var(--ease-standard) infinite; }
+@keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-7px); } }
+
+/* Fade / slide entrance helpers */
+.fade-in{ animation:fade-in var(--dur-3) var(--ease-standard) both; }
+@keyframes fade-in{ from{opacity:0;} to{opacity:1;} }
+
+@media (prefers-reduced-motion:reduce){
+  [data-reveal],[data-stagger] > *{ opacity:1!important; transform:none!important; }
+  .draw path,.draw polyline,.draw circle{ stroke-dashoffset:0!important; }
+  .marker-sweep{ background-size:100% 62%!important; }
+  .floaty{ animation:none!important; }
+}

@@ -1,0 +1,44 @@
+/* ============================================================
+   UTILITIES · GENERAL
+   Small, composable helpers. Spacing utils use logical props.
+   ============================================================ */
+/* Display / flow */
+.flex{ display:flex; } .grid-d{ display:grid; } .block{ display:block; } .inline{ display:inline; }
+.hidden{ display:none; }
+.wrap{ flex-wrap:wrap; } .nowrap{ flex-wrap:nowrap; }
+.items-center{ align-items:center; } .items-start{ align-items:flex-start; } .items-end{ align-items:flex-end; }
+.justify-center{ justify-content:center; } .justify-between{ justify-content:space-between; }
+.grow{ flex:1 1 auto; } .shrink-0{ flex-shrink:0; }
+.full{ inline-size:100%; }
+
+/* Text */
+.t-center{ text-align:center; } .t-start{ text-align:start; } .t-end{ text-align:end; }
+.uppercase{ text-transform:uppercase; letter-spacing:var(--tracking-caps); }
+.fw-medium{ font-weight:var(--fw-medium); } .fw-semibold{ font-weight:var(--fw-semibold); }
+.fw-bold{ font-weight:var(--fw-bold); } .fw-black{ font-weight:var(--fw-black); }
+.fs-sm{ font-size:var(--fs-sm); } .fs-lg{ font-size:var(--fs-lg); } .fs-xl{ font-size:var(--fs-xl); }
+
+/* Margin / padding (logical) */
+.mt-2{ margin-block-start:var(--s-2); } .mt-4{ margin-block-start:var(--s-4); }
+.mt-6{ margin-block-start:var(--s-6); } .mt-8{ margin-block-start:var(--s-8); }
+.mb-4{ margin-block-end:var(--s-4); } .mb-8{ margin-block-end:var(--s-8); }
+.p-4{ padding:var(--s-4); } .p-6{ padding:var(--s-6); } .p-8{ padding:var(--s-8); }
+.gap-2{ gap:var(--s-2); } .gap-4{ gap:var(--s-4); } .gap-6{ gap:var(--s-6); } .gap-8{ gap:var(--s-8); }
+
+/* Surface + rounding */
+.rounded{ border-radius:var(--radius-card); } .rounded-pill{ border-radius:var(--r-pill); }
+.elev-1{ box-shadow:var(--elev-1); } .elev-2{ box-shadow:var(--elev-2); } .elev-3{ box-shadow:var(--elev-3); }
+
+/* Texture opt-ins (work in any theme) */
+.surf-dotgrid{ background-image:var(--dot-grid); background-size:var(--dot-grid-size); }
+.surf-ruled{ background-image:var(--ruled-lines); }
+.surf-blueprint{ background-image:var(--blueprint); background-size:var(--blueprint-size); }
+
+/* Chips & pills */
+.chip{ display:inline-flex; align-items:center; gap:var(--s-2); padding:var(--s-1) var(--s-3);
+  font-size:var(--fs-xs); font-weight:var(--fw-semibold); color:var(--color-text-soft);
+  background:var(--color-surface-sunken); border:1px solid var(--color-line);
+  border-radius:var(--r-pill); }
+
+.divider{ block-size:1px; background:var(--color-line); border:none; margin-block:var(--s-8); }
+.divider--dashed{ background:none; border-block-start:1px dashed var(--color-line); }

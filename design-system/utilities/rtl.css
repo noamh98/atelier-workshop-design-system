@@ -1,0 +1,29 @@
+/* ============================================================
+   UTILITIES · RTL / LTR
+   The system is logical-property-first, so RTL mostly "just works".
+   This file handles the few directional visuals that must mirror:
+   arrows, progress fills, and hand-drawn strokes.
+   Activated automatically by [dir="rtl"].
+   ============================================================ */
+
+/* Mirror directional glyphs & freehand arrows */
+[dir="rtl"] .icon--arrow,
+[dir="rtl"] .freehand--arrow,
+[dir="rtl"] .vs__arrow svg{ transform:scaleX(-1); }
+
+/* Flip any element explicitly marked as directional */
+[dir="rtl"] .flip-x{ transform:scaleX(-1); }
+
+/* Progress + roadmap bars fill from the inline-start edge already
+   (logical props); ensure the gradient direction follows text dir */
+[dir="rtl"] .progress span{ background-position:right center; }
+
+/* Timeline rail sits on the inline-start side in both directions
+   via logical border — nothing to override. Marker circles &
+   underlines are symmetric, so they need no mirroring. */
+
+/* Numeric/mono runs stay LTR even inside RTL prose */
+.mono,[data-ltr]{ direction:ltr; unicode-bidi:isolate; }
+
+/* Keep bidi text (mixed HE/EN) isolated to avoid reordering bugs */
+bdi{ unicode-bidi:isolate; }

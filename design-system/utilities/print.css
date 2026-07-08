@@ -1,0 +1,35 @@
+/* ============================================================
+   UTILITIES · PRINT / PDF EXPORT
+   One clean slide (or section) per page, ink-safe colors, no UI.
+   ============================================================ */
+@media print{
+  @page{ size:A4 landscape; margin:12mm; }
+
+  :root{
+    --color-bg:#fff; --color-surface:#fff; --color-surface-sunken:#fff;
+    --shadow-paper:none; --elev-1:none; --elev-2:none; --elev-3:none; --elev-4:none;
+  }
+  body{ background:#fff!important; }
+  body *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  /* Hide interactive chrome */
+  .no-print,.toolbar,.deck-nav,.skip-link,[data-action]{ display:none!important; }
+
+  /* Surfaces keep a hairline so structure survives on paper */
+  .card,.surface,.slide{ border:1px solid #d8d8d8!important;
+    box-shadow:none!important; break-inside:avoid; }
+
+  .section{ break-inside:avoid; padding-block:1rem; border:none!important; }
+  .slide{ break-after:page; aspect-ratio:auto; min-height:auto; }
+  h1,h2,h3,h4{ break-after:avoid; }
+  table{ break-inside:auto; }
+  tr{ break-inside:avoid; }
+
+  a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:.75em; color:#555; }
+
+  /* Texture off — keeps toner light & text crisp */
+  [data-theme] body,[data-theme] .card,[data-theme] .slide{ background-image:none!important; }
+}
+
+/* Utility to force a page break before an element in print flows */
+.print-break-before{ break-before:page; }
