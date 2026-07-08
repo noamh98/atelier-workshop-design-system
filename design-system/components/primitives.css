@@ -1,0 +1,56 @@
+/* ============================================================
+   COMPONENT · PRIMITIVES
+   card, surface, button, badge, callout, tag, kicker.
+   Foundational atoms reused by every higher-order component.
+   ============================================================ */
+
+/* Surface & card */
+.surface{ background:var(--color-surface); border-radius:var(--radius-surface);
+  border:1px solid var(--color-line); }
+.card{ position:relative; background:var(--color-surface); border:1px solid var(--color-line);
+  border-radius:var(--radius-card); padding:var(--s-6); box-shadow:var(--elev-1);
+  transition:var(--transition-base), transform var(--dur-2) var(--ease-standard); }
+.card--pad-lg{ padding:var(--s-8); }
+.card--hover:hover{ transform:translateY(-3px); box-shadow:var(--elev-3); }
+.card__eyebrow{ margin-block-end:var(--s-2); }
+
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; gap:var(--s-2); padding:var(--s-2) var(--s-4);
+  font-size:var(--fs-sm); font-weight:var(--fw-semibold); color:var(--color-text-invert);
+  background:var(--ink-black); border:1px solid transparent; border-radius:var(--r-pill);
+  box-shadow:var(--elev-1); transition:var(--transition-base), transform var(--dur-1) var(--ease-standard); }
+.btn:hover{ transform:translateY(-1px); box-shadow:var(--elev-2); }
+.btn:active{ transform:translateY(0); }
+.btn.ghost{ color:var(--color-text); background:var(--color-surface);
+  border-color:var(--color-line-strong); box-shadow:none; }
+.btn.accent{ background:var(--color-accent); }
+
+/* Tag / label */
+.tag{ font-family:var(--font-mono); font-size:var(--fs-xs); font-weight:var(--fw-bold);
+  letter-spacing:.06em; color:var(--color-accent); }
+
+/* Badge (status token driven) */
+.badge{ display:inline-flex; align-items:center; gap:var(--s-1); padding:.2em .7em;
+  font-size:var(--fs-2xs); font-weight:var(--fw-bold); text-transform:uppercase;
+  letter-spacing:.06em; border-radius:var(--r-pill); border:1px solid transparent;
+  color:var(--color-text-invert); background:var(--color-text-soft); }
+.badge.on-track{ background:var(--status-on-track); }
+.badge.at-risk{ background:var(--status-at-risk); }
+.badge.blocked{ background:var(--status-blocked); }
+.badge.done{ background:var(--status-done); }
+.badge.ai{ background:var(--ink-purple); }
+.badge.soft{ color:var(--color-text); background:var(--color-surface-sunken);
+  border-color:var(--color-line); }
+
+/* Callout — icon + message, semantic left rail */
+.callout{ display:flex; gap:var(--s-4); align-items:flex-start; padding:var(--s-5);
+  background:var(--color-surface); border:1px solid var(--color-line);
+  border-inline-start:4px solid var(--color-accent); border-radius:var(--radius-card);
+  box-shadow:var(--elev-1); }
+.callout h4{ margin-block-end:var(--s-1); font-size:var(--fs-md); }
+.callout p{ color:var(--color-text-soft); font-size:var(--fs-sm); }
+.callout .icon,.callout > svg{ inline-size:1.5rem; block-size:1.5rem; color:var(--color-accent); flex-shrink:0; }
+.callout.stop{ border-inline-start-color:var(--ink-red); } .callout.stop :is(.icon,svg){ color:var(--ink-red); }
+.callout.warn{ border-inline-start-color:var(--ink-orange); } .callout.warn :is(.icon,svg){ color:var(--ink-orange); }
+.callout.ok{ border-inline-start-color:var(--ink-green); } .callout.ok :is(.icon,svg){ color:var(--ink-green); }
+.callout.ai{ border-inline-start-color:var(--ink-purple); } .callout.ai :is(.icon,svg){ color:var(--ink-purple); }

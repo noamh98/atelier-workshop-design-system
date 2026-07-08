@@ -1,0 +1,32 @@
+/* ============================================================
+   COMPONENT · ROADMAP, TIMELINE & MILESTONES
+   Lane-based roadmap bars + vertical timeline with status dots.
+   ============================================================ */
+.roadmap{ display:flex; flex-direction:column; gap:var(--s-3); }
+.roadmap__lane{ display:grid; grid-template-columns:120px 1fr; gap:var(--s-3); align-items:center; }
+.roadmap__lane > .soft{ font-size:var(--fs-sm); color:var(--color-text-soft); }
+.roadmap__bar{ padding:var(--s-3) var(--s-4); font-size:var(--fs-sm); font-weight:var(--fw-semibold);
+  color:var(--color-text-invert); background:var(--color-accent); border-radius:var(--r-pill); }
+.roadmap__bar.p{ background:var(--ink-purple); }
+.roadmap__bar.g{ background:var(--ink-green); }
+.roadmap__bar.o{ background:var(--ink-orange); }
+
+/* Vertical timeline */
+.timeline{ position:relative; display:flex; flex-direction:column; gap:var(--s-6);
+  padding-inline-start:var(--s-6); }
+.timeline::before{ content:""; position:absolute; inset-inline-start:6px; inset-block:6px;
+  inline-size:2px; background:var(--color-line-strong); }
+.timeline__item{ position:relative; }
+.timeline__item::before{ content:""; position:absolute; inset-inline-start:calc(-1 * var(--s-6));
+  inset-block-start:4px; translate:2px 0; inline-size:12px; block-size:12px; border-radius:50%;
+  background:var(--color-surface); border:2px solid var(--color-line-strong); }
+.timeline__item.done::before{ background:var(--ink-green); border-color:var(--ink-green); }
+.timeline__item .timeline__date{ font-family:var(--font-mono); font-size:var(--fs-xs);
+  color:var(--color-text-muted); }
+.timeline__item strong{ display:block; margin-block:2px; }
+.timeline__item p{ font-size:var(--fs-sm); color:var(--color-text-soft); }
+
+/* Milestone marker (inline) */
+.milestone{ display:inline-flex; align-items:center; gap:var(--s-2); font-weight:var(--fw-semibold);
+  color:var(--ink-green); }
+.milestone .icon{ color:var(--ink-green); }

@@ -1,0 +1,91 @@
+/* ============================================================
+   COMPONENT · WORKSHOP ANNOTATIONS
+   Physical, hand-made affordances: marker circles, underlines,
+   freehand arrows, highlights, sticky notes, pins, tape, clips,
+   folded corners, coffee stains, quick notes, crossed text.
+   Handwritten font is used ONLY here (never for body copy).
+   ============================================================ */
+
+/* Marker circle around a word/phrase (wrap inline SVG inside) */
+.marker-circle{ position:relative; display:inline-block; padding-inline:.15em; }
+.marker-circle svg{ position:absolute; inset-inline-start:-8%; inset-block-start:-22%;
+  inline-size:116%; block-size:150%; overflow:visible; pointer-events:none; }
+.marker-circle svg path{ fill:none; stroke:var(--ink-blue); stroke-width:2.4;
+  stroke-linecap:round; }
+.marker-circle.ink-red svg path{ stroke:var(--ink-red); }
+.marker-circle.ink-green svg path{ stroke:var(--ink-green); }
+.marker-circle.ink-purple svg path{ stroke:var(--ink-purple); }
+.marker-circle.ink-orange svg path{ stroke:var(--ink-orange); }
+
+/* Hand underline under a heading */
+.underline{ display:block; inline-size:min(240px,60%); block-size:.6em; margin-block-start:.15em;
+  overflow:visible; }
+.underline path{ fill:none; stroke:var(--ink-blue); stroke-width:3; stroke-linecap:round; }
+
+/* Highlighter wash behind text */
+.mark{ background:linear-gradient(var(--marker-yellow),var(--marker-yellow));
+  background-repeat:no-repeat; background-size:100% 60%; background-position:0 72%;
+  padding-inline:.1em; }
+.mark.blue{ --marker-yellow:var(--marker-blue); }
+.mark.green{ --marker-yellow:var(--marker-green); }
+
+/* Crossed-out text (a rejected idea) */
+.crossed{ position:relative; color:var(--color-text-muted); }
+.crossed::after{ content:""; position:absolute; inset-inline:0; inset-block-start:52%;
+  block-size:2px; background:var(--ink-red); transform:rotate(-2deg); }
+
+/* Freehand arrow / stroke (SVG) */
+.freehand path,.freehand polyline{ fill:none; stroke:var(--ink-blue); stroke-width:2.6;
+  stroke-linecap:round; stroke-linejoin:round; }
+.freehand.red path{ stroke:var(--ink-red); } .freehand.green path{ stroke:var(--ink-green); }
+.freehand.purple path{ stroke:var(--ink-purple); } .freehand.orange path{ stroke:var(--ink-orange); }
+
+/* Handwritten quick note */
+.annot{ font-family:var(--font-hand); font-size:calc(var(--fs-lg) * 1.05); font-weight:600;
+  color:var(--ink-blue); line-height:1.1; }
+.annot.red{ color:var(--ink-red); } .annot.green{ color:var(--ink-green); }
+.annot.purple{ color:var(--ink-purple); } .annot.orange{ color:var(--ink-orange); }
+
+/* Sticky note */
+.sticky{ position:relative; display:block; inline-size:min(200px,100%); padding:var(--s-5) var(--s-4) var(--s-4);
+  font-family:var(--font-hand); font-size:var(--fs-lg); line-height:1.22; color:#3a3320;
+  background:#fff6b8; box-shadow:var(--elev-2); transform:rotate(var(--rot,-2deg));
+  transition:transform var(--dur-2) var(--ease-spring); }
+.sticky:hover{ transform:rotate(0) translateY(-3px); }
+.sticky .meta{ display:block; margin-block-start:var(--s-2); font-family:var(--font-sans);
+  font-size:var(--fs-2xs); font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  color:#8a7a2e; }
+.sticky.green{ background:#c7f0d2; color:#1f4d31; } .sticky.green .meta{ color:#3d7a52; }
+.sticky.blue{ background:#cfe4ff; color:#1c3a5e; } .sticky.blue .meta{ color:#3f6ea3; }
+.sticky.pink{ background:#ffd6e2; color:#5e2233; } .sticky.pink .meta{ color:#a3506b; }
+.sticky.purple{ background:#e6d9ff; color:#3a2a5e; } .sticky.purple .meta{ color:#6b52a3; }
+
+/* Push pin & tape */
+.pin{ position:absolute; inset-block-start:-9px; inset-inline-start:50%; translate:-50% 0;
+  inline-size:16px; block-size:16px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ff9aa2, #d83a4a 70%);
+  box-shadow:0 3px 5px rgba(0,0,0,.28); }
+.pin.blue{ background:radial-gradient(circle at 35% 30%,#9ac2ff,#2f6fd8 70%); }
+.pin.green{ background:radial-gradient(circle at 35% 30%,#9ff0b8,#1f9d63 70%); }
+.tape{ position:absolute; inline-size:74px; block-size:24px; background:rgba(226,214,160,.55);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.04); transform:rotate(-4deg); }
+.tape.tc{ inset-block-start:-10px; inset-inline-start:50%; translate:-50% 0; }
+
+/* Paper-clip (pure CSS on a corner) */
+.paperclip{ position:absolute; inset-block-start:-8px; inset-inline-end:18px; inline-size:14px; block-size:34px;
+  border:2px solid #9aa3b2; border-radius:8px; border-block-end:none; transform:rotate(8deg); }
+
+/* Folded corner */
+.fold-corner{ position:relative; overflow:hidden; }
+.fold-corner::after{ content:""; position:absolute; inset-block-start:0; inset-inline-end:0;
+  border-width:0 26px 26px 0; border-style:solid;
+  border-color:color-mix(in srgb,var(--color-line-strong) 70%,transparent) var(--color-bg);
+  filter:drop-shadow(-2px 2px 2px rgba(0,0,0,.08)); }
+
+/* Coffee stain — extremely subtle ambient realism */
+.coffee-stain{ position:absolute; inline-size:120px; block-size:120px; border-radius:50%;
+  border:6px solid rgba(120,72,30,.05); background:radial-gradient(circle,transparent 58%,rgba(120,72,30,.035) 60%);
+  pointer-events:none; z-index:var(--z-base); }
+
+/* Non-workshop themes suppress paper-only ornaments */
+:where([data-theme="glass"],[data-theme="ai"],[data-theme="scandi"]) :is(.coffee-stain,.fold-corner::after,.tape,.paperclip){ display:none; }

@@ -1,0 +1,25 @@
+/* ============================================================
+   COMPONENT · PROCESS FLOW & AI PIPELINE
+   Numbered horizontal steps with connectors; AI pipeline stages.
+   ============================================================ */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));
+  gap:var(--s-4); }
+.flow__step{ position:relative; padding:var(--s-5); background:var(--color-surface);
+  border:1px solid var(--color-line); border-radius:var(--radius-card); box-shadow:var(--elev-1); }
+.flow__step h4{ margin-block:var(--s-2) var(--s-1); font-size:var(--fs-md); }
+.flow__step p{ font-size:var(--fs-sm); color:var(--color-text-soft); }
+.flow__num{ display:grid; place-items:center; inline-size:2rem; block-size:2rem;
+  border-radius:50%; background:var(--color-accent); color:var(--color-text-invert);
+  font-weight:var(--fw-bold); font-size:var(--fs-sm); }
+/* Connector chevrons between steps (hidden when wrapped/stacked) */
+.flow__step:not(:last-child)::after{ content:""; position:absolute; inset-inline-end:-14px;
+  inset-block-start:50%; inline-size:14px; block-size:2px; background:var(--color-line-strong); }
+@media (max-width:760px){ .flow__step::after{ display:none; } }
+
+/* AI pipeline — sequential stages with purple accent */
+.pipeline{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));
+  gap:var(--s-3); }
+.pipeline__stage{ padding:var(--s-4); background:var(--color-surface);
+  border:1px solid var(--color-line); border-inline-start:3px solid var(--ink-purple);
+  border-radius:var(--radius-card); }
+.pipeline__stage p{ font-size:var(--fs-sm); color:var(--color-text-soft); }

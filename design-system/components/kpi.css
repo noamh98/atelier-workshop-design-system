@@ -1,0 +1,34 @@
+/* ============================================================
+   COMPONENT · KPI CARDS & PROGRESS
+   Metric tiles with animated count-up value + delta indicator.
+   Container-query aware so they reflow inside any column.
+   ============================================================ */
+.kpi{ display:flex; flex-direction:column; gap:var(--s-2); padding:var(--s-5);
+  background:var(--color-surface); border:1px solid var(--color-line);
+  border-radius:var(--radius-card); box-shadow:var(--elev-1);
+  border-block-start:3px solid var(--color-accent); }
+.kpi.green{ border-block-start-color:var(--ink-green); }
+.kpi.orange{ border-block-start-color:var(--ink-orange); }
+.kpi.red{ border-block-start-color:var(--ink-red); }
+.kpi.purple{ border-block-start-color:var(--ink-purple); }
+
+.kpi__label{ font-size:var(--fs-xs); font-weight:var(--fw-semibold);
+  text-transform:uppercase; letter-spacing:.08em; color:var(--color-text-muted); }
+.kpi__value{ font-size:var(--fs-2xl); font-weight:var(--fw-black); line-height:1;
+  color:var(--ink-black); font-variant-numeric:tabular-nums; }
+.kpi__delta{ display:inline-flex; align-items:center; gap:.3em; font-size:var(--fs-xs);
+  font-weight:var(--fw-bold); color:var(--color-text-soft); }
+.kpi__delta.up{ color:var(--ink-green); }
+.kpi__delta.down{ color:var(--ink-red); }
+
+/* Progress bar */
+.progress{ position:relative; block-size:9px; border-radius:var(--r-pill);
+  background:var(--color-surface-sunken); overflow:hidden; }
+.progress > span{ position:absolute; inset-block:0; inset-inline-start:0; inline-size:0;
+  border-radius:inherit; background:var(--color-accent);
+  transition:inline-size var(--dur-5) var(--ease-emphasized); }
+.progress.p > span{ background:var(--ink-purple); }
+.progress.g > span{ background:var(--ink-green); }
+.progress.o > span{ background:var(--ink-orange); }
+
+/* Ring/donut progress handled in charts.css */

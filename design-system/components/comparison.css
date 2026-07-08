@@ -1,0 +1,28 @@
+/* ============================================================
+   COMPONENT · COMPARISON
+   Current vs Future, comparison cards, and comparison tables.
+   ============================================================ */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:var(--s-6); align-items:center; }
+@media (max-width:760px){ .vs{ grid-template-columns:1fr; } .vs__arrow{ rotate:90deg; justify-self:center; } }
+.vs__col{ padding:var(--s-6); border-radius:var(--radius-card); background:var(--color-surface);
+  border:1px solid var(--color-line); box-shadow:var(--elev-1); }
+.vs__col.now{ border-block-start:3px solid var(--ink-red); }
+.vs__col.future{ border-block-start:3px solid var(--ink-green); }
+.vs__col ul{ display:flex; flex-direction:column; gap:var(--s-2); margin-block-start:var(--s-3); }
+.vs__col li{ padding-inline-start:var(--s-5); position:relative; color:var(--color-text-soft); }
+.vs__col.now li::before{ content:"\2013"; position:absolute; inset-inline-start:0; color:var(--ink-red); font-weight:700; }
+.vs__col.future li::before{ content:"\2713"; position:absolute; inset-inline-start:0; color:var(--ink-green); font-weight:700; }
+.vs__arrow svg{ inline-size:56px; block-size:40px; overflow:visible; }
+
+/* Comparison table */
+.tbl{ inline-size:100%; border-collapse:collapse; background:var(--color-surface);
+  border:1px solid var(--color-line); border-radius:var(--radius-card); overflow:hidden;
+  box-shadow:var(--elev-1); }
+.tbl th,.tbl td{ padding:var(--s-3) var(--s-4); text-align:start; font-size:var(--fs-sm);
+  border-block-end:1px solid var(--color-line); }
+.tbl thead th{ background:var(--color-surface-sunken); font-weight:var(--fw-bold);
+  color:var(--color-text); text-transform:uppercase; letter-spacing:.04em; font-size:var(--fs-xs); }
+.tbl tbody tr:last-child td{ border-block-end:none; }
+.tbl tbody tr:hover{ background:var(--color-accent-quiet); }
+.tbl .tick{ color:var(--ink-green); font-weight:700; }
+.tbl .cross{ color:var(--color-text-muted); }
